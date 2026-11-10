@@ -1,5 +1,11 @@
 // window.CLIENT_CONFIG loaded from config.js
 
+    // Image fix: when embedded image data is available (images-data.js),
+    // resolve local "images/..." paths to it so photos always display.
+    function resolveImgSrc(src) {
+      return (window.IMAGE_DATA && window.IMAGE_DATA[src]) || src;
+    }
+
     var DEFAULT_LEADS = [
       {
         id: "lead_104",
@@ -241,7 +247,7 @@
     function buildGalleryCardHtml(g, index) {
       return '<div onclick="openLightbox(' + index + ')" class="contractor-card group cursor-pointer rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm flex flex-col justify-between">' +
         '<div class="relative overflow-hidden bg-slate-900 aspect-[4/3]">' +
-          '<img src="' + g.src + '" alt="' + g.title + '" width="720" height="540" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">' +
+          '<img src="' + resolveImgSrc(g.src) + '" alt="' + g.title + '" width="720" height="540" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">' +
           '<div class="absolute top-2.5 left-2.5 bg-navy-900/85 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md border border-white/15">' +
             g.city + ', CO' +
           '</div>' +
@@ -304,7 +310,7 @@
       document.getElementById("lightboxCounter").textContent = (appState.lightboxIndex + 1) + " / " + list.length;
       document.getElementById("lightboxTitle").textContent = item.title;
       var img = document.getElementById("lightboxImg");
-      img.src = item.src;
+      img.src = resolveImgSrc(item.src);
       img.alt = item.title;
       document.getElementById("lightboxSpec").textContent = item.spec;
     }
@@ -867,6 +873,13 @@
     }
 
     window.addEventListener("DOMContentLoaded", function() {
+      // Swap any static <img src="images/..."> (e.g. the hero) to embedded data when available
+      if (window.IMAGE_DATA) {
+        var staticImgs = document.querySelectorAll('img[src^="images/"]');
+        for (var si = 0; si < staticImgs.length; si++) {
+          staticImgs[si].src = resolveImgSrc(staticImgs[si].getAttribute("src"));
+        }
+      }
       loadIntegrationSettings();
       loadLeadsFromStorage();
       renderGallery();
