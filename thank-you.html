@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estimate Request Confirmed | Summit Roofing Denver</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0F2A44',
+              'navy-dark': '#091B2C',
+              amber: '#F59E0B',
+              'amber-dark': '#D97706',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between font-sans antialiased">
+
+  <!-- Header -->
+  <header class="bg-brand-navy text-white border-b border-slate-800 py-4 px-6">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-lg bg-amber-500 flex items-center justify-center text-brand-navy">
+          <i data-lucide="mountain-snow" class="w-6 h-6 stroke-[2.5]"></i>
+        </div>
+        <div>
+          <span class="text-xl font-black text-white">SUMMIT<span class="text-amber-400">ROOFING</span></span>
+          <span class="text-[10px] uppercase tracking-wider text-slate-300 block font-semibold">Denver, Colorado</span>
+        </div>
+      </a>
+      <a href="tel:3035550147" class="hidden sm:flex items-center text-amber-400 font-mono font-bold text-sm bg-slate-800 px-3.5 py-1.5 rounded-lg border border-slate-700">
+        <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+        (303) 555-0147
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content Card -->
+  <main class="flex-grow flex items-center justify-center p-4 sm:p-6 my-8">
+    <div class="max-w-2xl w-full bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden text-center">
+      
+      <!-- Top Success Badge -->
+      <div class="bg-brand-navy text-white p-8 sm:p-10 relative">
+        <div class="w-20 h-20 rounded-full bg-emerald-500/20 border-2 border-emerald-400 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+          <i data-lucide="check" class="w-10 h-10 stroke-[3]"></i>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
+          Thanks! We'll call you within 1 business day.
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-lg mx-auto">
+          Your free roof inspection request has been logged and assigned to our Denver Front Range estimating team.
+        </p>
+      </div>
+
+      <!-- Personalized Lead Confirmation (Dynamically updated if available) -->
+      <div id="lead-summary-card" class="hidden p-4 mx-6 my-4 bg-amber-50 border border-amber-200 rounded-xl text-left text-xs text-amber-900">
+        <p class="font-bold text-amber-800 mb-1">Confirmation Details Logged:</p>
+        <p><span class="font-medium">Name:</span> <span id="lead-name"></span></p>
+        <p><span class="font-medium">Phone:</span> <span id="lead-phone" class="font-mono"></span></p>
+        <p><span class="font-medium">Property:</span> <span id="lead-address"></span></p>
+      </div>
+
+      <!-- What Happens Next Timeline -->
+      <div class="p-6 sm:p-8 space-y-6 text-left border-b border-slate-100">
+        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-400 text-center">
+          What Happens Next
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="w-6 h-6 rounded-full bg-amber-500 text-brand-navy font-bold text-xs flex items-center justify-center mb-2">1</span>
+            <h3 class="font-bold text-slate-900 text-sm mb-1">Phone Review</h3>
+            <p class="text-slate-500 text-xs leading-relaxed">
+              We confirm your roof details, hail timeline, and select a time that fits your schedule.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="w-6 h-6 rounded-full bg-amber-500 text-brand-navy font-bold text-xs flex items-center justify-center mb-2">2</span>
+            <h3 class="font-bold text-slate-900 text-sm mb-1">21-Point Inspection</h3>
+            <p class="text-slate-500 text-xs leading-relaxed">
+              Our certified roofer takes high-res drone/ladder photos of decking, flashing, and shingles.
+            </p>
+          </div>
+
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="w-6 h-6 rounded-full bg-amber-500 text-brand-navy font-bold text-xs flex items-center justify-center mb-2">3</span>
+            <h3 class="font-bold text-slate-900 text-sm mb-1">Written Quote</h3>
+            <p class="text-slate-500 text-xs leading-relaxed">
+              You receive an itemized, transparent quote with zero hidden fees and no sales pressure.
+            </p>
+          </div>
+        </div>
+
+        <!-- Immediate Assistance Box -->
+        <div class="p-4 rounded-xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p class="font-bold text-sm text-white flex items-center">
+              <i data-lucide="zap" class="w-4 h-4 mr-1 text-amber-400"></i>
+              Active roof leak or storm emergency?
+            </p>
+            <p class="text-xs text-slate-400">Don't wait for our callback — call our emergency line directly.</p>
+          </div>
+          <a href="tel:3035550147" class="inline-flex items-center px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-brand-navy font-bold text-xs shrink-0 font-mono shadow">
+            Call (303) 555-0147
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Buttons inside Card -->
+      <div class="p-6 bg-slate-50 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="index.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-brand-navy hover:bg-slate-800 text-white font-bold text-sm transition-all shadow">
+          <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+          Return to Home Page
+        </a>
+        <a href="leads.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-300 transition-all">
+          <i data-lucide="table-2" class="w-4 h-4 mr-2 text-amber-500"></i>
+          View Leads Table (Prototype)
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-brand-navy-dark text-slate-400 text-xs py-6 text-center border-t border-slate-800">
+    <p>© 2026 Summit Roofing. Denver, Colorado. All rights reserved.</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Try reading latest lead from sessionStorage for personalized confirmation
+    try {
+      const stored = sessionStorage.getItem("summit_latest_lead");
+      if (stored) {
+        const lead = JSON.parse(stored);
+        const card = document.getElementById("lead-summary-card");
+        if (card && lead.name) {
+          document.getElementById("lead-name").textContent = lead.name;
+          document.getElementById("lead-phone").textContent = lead.phone;
+          document.getElementById("lead-address").textContent = lead.address;
+          card.classList.remove("hidden");
+        }
+      }
+    } catch (e) {}
+  </script>
+</body>
+</html>

@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Summit Roofing | Roof Replacement &amp; Repair in Denver, CO</title>
+  <meta name="description" content="Denver's premier roofing contractor. Licensed &amp; insured roof replacement, hail damage repairs, and free 21-point roof inspections in Denver, Aurora, Lakewood &amp; Littleton.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Summit Roofing | Roof Replacement &amp; Repair in Denver">
+  <meta property="og:description" content="Licensed &amp; Insured Front Range Roofing Contractor. 15 Years Experience, Free Inspection.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Schema.org JSON-LD LocalBusiness / RoofingContractor Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "name": "Summit Roofing",
+    "image": "https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1200&q=80",
+    "telephone": "(303) 555-0147",
+    "email": "hello@summitroofing-demo.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1700 Lincoln St, Suite 1200",
+      "addressLocality": "Denver",
+      "addressRegion": "CO",
+      "postalCode": "80203",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.7436,
+      "longitude": -104.9860
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "areaServed": [
+      { "@type": "City", "name": "Denver" },
+      { "@type": "City", "name": "Aurora" },
+      { "@type": "City", "name": "Lakewood" },
+      { "@type": "City", "name": "Littleton" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "185"
+    }
+  }
+  </script>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#0F2A44',
+              'navy-dark': '#091B2C',
+              'navy-light': '#1A3B5C',
+              amber: '#F59E0B',
+              'amber-dark': '#D97706',
+              'amber-light': '#FEF3C7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white text-slate-900 font-sans antialiased selection:bg-amber-100 selection:text-amber-900 pb-28 md:pb-0">
+
+  <!-- ================= TOP EMERGENCY & TRUST BAR ================= -->
+  <div class="bg-brand-navy-dark text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-4">
+        <span class="flex items-center text-amber-400 font-medium">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 mr-1"></i>
+          Licensed &amp; Insured #CO-ROOF-78421
+        </span>
+        <span class="hidden sm:inline-block text-slate-500">•</span>
+        <span class="hidden sm:flex items-center text-slate-300">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1 text-slate-400"></i>
+          Serving Denver, Aurora, Lakewood &amp; Littleton
+        </span>
+      </div>
+      <div class="flex items-center space-x-3 text-slate-300">
+        <span class="hidden md:inline-block">Mon–Sat: 8am–6pm</span>
+        <a href="tel:3035550147" class="text-amber-400 font-semibold flex items-center hover:text-amber-300 transition-colors" title="Call Emergency Storm Dispatch">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse mr-1.5"></span>
+          Emergency Hail Tarping Available
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 1. STICKY HEADER ================= -->
+  <header class="sticky top-0 z-40 bg-brand-navy text-white shadow-lg border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center space-x-3 group" aria-label="Summit Roofing Home">
+        <div class="w-11 h-11 rounded-lg bg-amber-500 flex items-center justify-center text-brand-navy shadow-md group-hover:bg-amber-400 transition-colors">
+          <i data-lucide="mountain-snow" class="w-7 h-7 stroke-[2.5]"></i>
+        </div>
+        <div>
+          <span class="text-xl sm:text-2xl font-black tracking-tight text-white block leading-tight">
+            SUMMIT<span class="text-amber-400 font-extrabold">ROOFING</span>
+          </span>
+          <span class="text-[10px] tracking-widest uppercase text-slate-300 block font-semibold">
+            Denver, Colorado
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-semibold tracking-wide">
+        <a href="#services" class="text-slate-200 hover:text-amber-400 transition-colors">Services</a>
+        <a href="#gallery" class="text-slate-200 hover:text-amber-400 transition-colors">Gallery</a>
+        <a href="#why-us" class="text-slate-200 hover:text-amber-400 transition-colors">Why Us</a>
+        <a href="#reviews" class="text-slate-200 hover:text-amber-400 transition-colors">Reviews</a>
+        <a href="leads.html" class="text-amber-400 hover:text-amber-300 transition-colors flex items-center text-xs bg-brand-navy-dark px-2.5 py-1 rounded border border-amber-500/30">
+          <i data-lucide="table-2" class="w-3.5 h-3.5 mr-1"></i> Leads View
+        </a>
+      </nav>
+
+      <!-- Desktop Contact & CTA -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <a href="tel:3035550147" class="flex items-center text-slate-100 hover:text-amber-400 transition-colors font-mono font-bold text-sm">
+          <div class="w-9 h-9 rounded-full bg-slate-800/80 flex items-center justify-center text-amber-400 mr-2.5 border border-slate-700">
+            <i data-lucide="phone-call" class="w-4 h-4"></i>
+          </div>
+          <span>(303) 555-0147</span>
+        </a>
+        <a href="#estimate" class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-brand-navy font-bold text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+          Free Estimate
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center space-x-2 md:hidden">
+        <a href="tel:3035550147" class="p-2 text-amber-400 bg-slate-800 rounded-lg hover:bg-slate-700" aria-label="Call Summit Roofing">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+        </a>
+        <button id="mobile-menu-btn" class="p-2 text-slate-200 hover:text-white rounded-lg focus:outline-none" aria-label="Open Navigation Menu" aria-expanded="false">
+          <span id="menu-icon-wrap"><i data-lucide="menu" class="w-6 h-6"></i></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-navy-dark border-t border-slate-800 px-4 pt-3 pb-6 space-y-3">
+      <a href="#services" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800">Services</a>
+      <a href="#gallery" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800">Gallery</a>
+      <a href="#why-us" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800">Why Choose Us</a>
+      <a href="#reviews" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:text-amber-400 hover:bg-slate-800">Reviews</a>
+      <a href="leads.html" class="mobile-nav-link block px-3 py-2 rounded-md text-sm font-medium text-amber-400 bg-slate-900 border border-amber-500/20">
+        📊 View Leads Table (Prototype)
+      </a>
+      <div class="pt-3 border-t border-slate-800 flex flex-col gap-2.5">
+        <a href="tel:3035550147" class="flex items-center justify-center w-full py-3 rounded-lg bg-slate-800 text-amber-400 font-bold font-mono text-base border border-slate-700">
+          <i data-lucide="phone-call" class="w-5 h-5 mr-2"></i>
+          Call (303) 555-0147
+        </a>
+        <a href="#estimate" class="mobile-nav-link flex items-center justify-center w-full py-3 rounded-lg bg-amber-500 text-brand-navy font-bold text-base shadow-md">
+          Get Free Estimate
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 2. HERO SECTION ================= -->
+  <section class="relative bg-brand-navy text-white overflow-hidden py-16 md:py-24">
+    <!-- Atmospheric subtle background pattern -->
+    <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#F59E0B_1px,transparent_1px)] [background-size:20px_20px]"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Value Proposition & CTAs -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Badges Bar -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+            <div class="inline-flex items-center space-x-2 bg-slate-800/90 border border-amber-500/30 rounded-full px-3.5 py-1.5 text-xs font-semibold text-amber-400">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span>Denver &amp; Front Range Hail Specialists</span>
+            </div>
+            <div class="inline-flex items-center space-x-1.5 bg-emerald-950/60 border border-emerald-500/30 rounded-full px-3 py-1.5 text-xs font-semibold text-emerald-300">
+              <i data-lucide="banknote" class="w-3.5 h-3.5 text-emerald-400"></i>
+              <span>0% Financing Options Available</span>
+            </div>
+          </div>
+
+          <!-- Main H1 Headline -->
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15] text-white">
+            Roof Replacement &amp; Repair in Denver
+          </h1>
+
+          <!-- Realistic Contractor Subheadline -->
+          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Denver's trusted local roofing contractor. Protecting Colorado homes from mountain wind, snow loads, and golf-ball hail with Class 4 impact-resistant roofing.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#estimate" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-brand-navy font-black text-base shadow-xl hover:shadow-amber-500/20 transition-all transform hover:-translate-y-0.5">
+              <span>Get Free Estimate</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 ml-2 stroke-[2.5]"></i>
+            </a>
+            <a href="tel:3035550147" class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-white font-bold text-base border border-slate-700 shadow-md transition-all">
+              <i data-lucide="phone" class="w-5 h-5 mr-2 text-amber-400"></i>
+              <span>Call (303) 555-0147</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges Bar (3 Badges) -->
+          <div class="pt-8 border-t border-slate-800/80 grid grid-cols-3 gap-3 max-w-lg mx-auto lg:mx-0 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-2">
+              <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+                <i data-lucide="shield" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-white">Licensed &amp; Insured</p>
+                <p class="text-[11px] text-slate-300">$2M Liability Coverage</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-2">
+              <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+                <i data-lucide="check-circle" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-white">Free Inspection</p>
+                <p class="text-[11px] text-slate-300">21-Point Photo Report</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-2">
+              <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shrink-0">
+                <i data-lucide="award" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-white">15 Years Exp.</p>
+                <p class="text-[11px] text-slate-300">2,400+ Front Range Roofs</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: 1 High-Res Hero Image with Trust Overlay -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-900 group">
+            <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1000&q=80" 
+                 alt="Summit Roofing residential roof replacement in Denver" 
+                 class="w-full h-80 sm:h-96 lg:h-[460px] object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-navy-dark/90 via-transparent to-transparent"></div>
+            
+            <!-- Bottom Floating Trust Pill -->
+            <div class="absolute bottom-4 left-4 right-4 bg-brand-navy-dark/95 backdrop-blur-md p-4 rounded-xl border border-slate-700 flex items-center justify-between">
+              <div>
+                <div class="flex items-center text-amber-400 text-xs font-semibold">
+                  <div class="flex mr-1.5">
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 text-amber-400"></i>
+                  </div>
+                  <span>4.9 / 5.0 (185+ Reviews)</span>
+                </div>
+                <p class="text-white text-xs font-bold mt-0.5">Top Rated Denver Roofer</p>
+              </div>
+              <span class="text-xs bg-amber-500/20 text-amber-300 font-semibold px-2.5 py-1 rounded-full border border-amber-500/30">
+                Front Range, CO
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. SERVICES (6 CARDS) ================= -->
+  <section id="services" class="py-20 bg-slate-50 border-b border-slate-200 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600 bg-amber-100 px-3 py-1 rounded-full">
+          Comprehensive Roofing Solutions
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight mt-3">
+          Expert Roofing Services Built for Colorado
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600 mt-3">
+          From heavy snow loads to severe summer hail, our crew provides durable craftsmanship backed by written guarantees.
+        </p>
+      </div>
+
+      <!-- 6 Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- 1. Roof Replacement -->
+        <div class="contractor-card bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center mb-5">
+              <i data-lucide="home" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">Roof Replacement</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Full tear-off and replacement using Class 4 hail-resistant architectural shingles engineered to withstand 130 mph Front Range winds.
+            </p>
+          </div>
+          <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-700">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-amber-500 mr-2 shrink-0"></i>50-Year Manufacturer Warranty</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-amber-500 mr-2 shrink-0"></i>Full Ice &amp; Water Shield Underlayment</li>
+          </ul>
+        </div>
+
+        <!-- 2. Roof Repair -->
+        <div class="contractor-card bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-sky-50 border border-sky-200 text-sky-700 flex items-center justify-center mb-5">
+              <i data-lucide="hammer" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">Roof Repair</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Fast, reliable leak diagnostics and precision repairs to restore your roof's integrity without forcing a costly complete replacement.
+            </p>
+          </div>
+          <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-700">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-sky-600 mr-2 shrink-0"></i>Chimney, pipe boot &amp; flashing repair</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-sky-600 mr-2 shrink-0"></i>Blown-off shingle exact color match</li>
+          </ul>
+        </div>
+
+        <!-- 3. Roof Inspection -->
+        <div class="contractor-card bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center mb-5">
+              <i data-lucide="clipboard-check" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">Roof Inspection</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Complimentary 21-point photo inspection and condition report with honest, transparent advice and zero aggressive sales tactics.
+            </p>
+          </div>
+          <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-700">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-emerald-600 mr-2 shrink-0"></i>High-resolution photo documentation</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-emerald-600 mr-2 shrink-0"></i>100% Free with zero obligation</li>
+          </ul>
+        </div>
+
+        <!-- 4. Gutters -->
+        <div class="contractor-card bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-700 flex items-center justify-center mb-5">
+              <i data-lucide="droplets" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">Seamless Gutters</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Heavy-gauge 5-inch and 6-inch seamless aluminum gutters rolled on-site to channel heavy Colorado snowmelt away from your foundation.
+            </p>
+          </div>
+          <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-700">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-indigo-600 mr-2 shrink-0"></i>Heavy-duty hidden interior hangers</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-indigo-600 mr-2 shrink-0"></i>Leaf protection &amp; debris guards</li>
+          </ul>
+        </div>
+
+        <!-- 5. Storm Damage Repair -->
+        <div class="contractor-card bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 flex items-center justify-center mb-5">
+              <i data-lucide="cloud-lightning" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">Storm Damage Repair</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Rapid emergency tarping and insurance claim support following Colorado hailstorms, high-wind events, and falling branch damage.
+            </p>
+          </div>
+          <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-700">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-rose-600 mr-2 shrink-0"></i>2-Hour emergency tarp dispatch</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-rose-600 mr-2 shrink-0"></i>Itemized Xactimate insurance estimates</li>
+          </ul>
+        </div>
+
+        <!-- 6. Commercial Roofing -->
+        <div class="contractor-card bg-white p-7 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-slate-100 border border-slate-300 text-brand-navy flex items-center justify-center mb-5">
+              <i data-lucide="building-2" class="w-7 h-7"></i>
+            </div>
+            <h3 class="text-xl font-bold text-brand-navy mb-2">Commercial Roofing</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Durable commercial TPO, EPDM, and flat-roof installations engineered for energy efficiency and minimal interruption to daily business.
+            </p>
+          </div>
+          <ul class="space-y-2 border-t border-slate-100 pt-4 text-xs font-medium text-slate-700">
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-brand-navy mr-2 shrink-0"></i>Energy Star reflective cool membranes</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-brand-navy mr-2 shrink-0"></i>Scheduled preventative maintenance plans</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Quick CTA Banner inside services -->
+      <div class="mt-14 p-6 sm:p-8 bg-brand-navy rounded-2xl text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div class="text-center md:text-left">
+          <h4 class="text-xl font-bold">Unsure what your roof needs?</h4>
+          <p class="text-slate-300 text-sm mt-1">Get an honest 21-point photographic evaluation with zero sales pressure.</p>
+        </div>
+        <a href="#estimate" class="inline-flex items-center px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-brand-navy font-bold text-sm shrink-0 shadow-md">
+          Schedule Free Inspection
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 4. PHOTO GALLERY (8 PHOTOS + LIGHTBOX) ================= -->
+  <section id="gallery" class="py-20 bg-white scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-600 bg-amber-100 px-3 py-1 rounded-full">
+            Recent Local Projects
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight mt-3">
+            Real Colorado Roofs We've Protected
+          </h2>
+          <p class="text-slate-600 text-base mt-2">
+            Click any photo below to inspect our precision craftsmanship in the Denver metro area.
+          </p>
+        </div>
+        <div class="mt-4 md:mt-0 text-sm text-slate-500 flex items-center">
+          <i data-lucide="info" class="w-4 h-4 mr-1.5 text-amber-500"></i>
+          Tap image to open high-res lightbox
+        </div>
+      </div>
+
+      <!-- 8-Photo Responsive Grid (Rendered by js/gallery.js) -->
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Injected via JavaScript from SITE_CONFIG.gallery -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/90 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Project Photo Preview">
+    <div class="lightbox-backdrop absolute inset-0"></div>
+    
+    <div class="relative z-10 max-w-4xl w-full bg-slate-900 rounded-2xl overflow-hidden shadow-2xl border border-slate-800 flex flex-col">
+      <!-- Top Bar -->
+      <div class="p-4 bg-slate-950 flex items-center justify-between border-b border-slate-800">
+        <div>
+          <h3 id="lightbox-title" class="text-white font-bold text-base sm:text-lg">Project Preview</h3>
+          <p id="lightbox-location" class="text-amber-400 text-xs font-medium"></p>
+        </div>
+        <button id="lightbox-close" class="p-2 text-slate-300 hover:text-white rounded-lg hover:bg-slate-800 focus:outline-none" aria-label="Close modal">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Image Display Area -->
+      <div class="relative bg-black flex items-center justify-center min-h-[300px] max-h-[70vh] overflow-hidden">
+        <img id="lightbox-img" src="" alt="Enlarged project view" class="lightbox-image max-h-[70vh] w-auto max-w-full object-contain">
+        
+        <!-- Prev & Next Controls -->
+        <button id="lightbox-prev" class="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-slate-900/80 text-white hover:bg-amber-500 hover:text-brand-navy transition-colors focus:outline-none" aria-label="Previous image">
+          <i data-lucide="chevron-left" class="w-6 h-6"></i>
+        </button>
+        <button id="lightbox-next" class="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-slate-900/80 text-white hover:bg-amber-500 hover:text-brand-navy transition-colors focus:outline-none" aria-label="Next image">
+          <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Bottom Caption Bar -->
+      <div class="p-4 bg-slate-950 border-t border-slate-800">
+        <p id="lightbox-caption" class="text-sm text-slate-300 leading-relaxed"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 5. WHY US + REVIEWS ================= -->
+  <section id="why-us" class="py-20 bg-slate-900 text-white border-t border-slate-800 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top 4 Bullet Pillars -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-950/60 border border-amber-500/20 px-3 py-1 rounded-full">
+          The Summit Advantage
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-3">
+          Why Denver Homeowners Choose Us
+        </h2>
+        <p class="text-slate-300 text-base mt-2">
+          We don't do high-pressure sales pitches. We provide honest roof assessments, top-tier materials, and written warranties.
+        </p>
+      </div>
+
+      <!-- 4 Pillars Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div class="bg-slate-800/70 p-6 rounded-2xl border border-slate-700/80">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-lg mb-1.5">Free 21-Point Inspection</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Complete digital photo report with zero sales pressure, zero cost, and zero obligation.
+          </p>
+        </div>
+
+        <div class="bg-slate-800/70 p-6 rounded-2xl border border-slate-700/80">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-lg mb-1.5">Written Warranty</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            10-Year workmanship guarantee combined with 50-year manufacturer transferable material warranties.
+          </p>
+        </div>
+
+        <div class="bg-slate-800/70 p-6 rounded-2xl border border-slate-700/80">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-lg mb-1.5">Local Denver Crew</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Full-time, in-house certified roofers who understand Front Range weather extremes. No transient sub-crews.
+          </p>
+        </div>
+
+        <div class="bg-slate-800/70 p-6 rounded-2xl border border-slate-700/80">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+            <i data-lucide="clock" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-lg mb-1.5">Fast Response Time</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            All phone inquiries returned within 1 business day. Emergency tarping dispatched within hours after severe storms.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 Real Customer Reviews -->
+      <div id="reviews" class="scroll-mt-24">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h3 class="text-2xl font-bold text-white">Verified Local Reviews</h3>
+            <p class="text-slate-300 text-sm">Real feedback from Front Range homeowners</p>
+          </div>
+          <div class="hidden sm:flex items-center space-x-1 text-amber-400 font-bold text-sm bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <span>5.0 Star Rating</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Review 1 -->
+          <div class="bg-slate-800/90 p-7 rounded-2xl border border-slate-700 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center space-x-1 text-amber-400 mb-3">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <span class="text-xs text-slate-400 ml-2">5.0</span>
+              </div>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+                "After the big May hailstorm, Summit Roofing was out the next morning for a free inspection. They walked my insurance adjuster through every inch of damage. Crew finished in one day and left my driveway cleaner than they found it."
+              </p>
+            </div>
+            <div class="border-t border-slate-700/80 pt-4 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold text-sm">Mike R.</p>
+                <p class="text-slate-400 text-xs">Denver (Washington Park)</p>
+              </div>
+              <span class="text-[11px] text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded font-medium border border-amber-500/20">
+                Roof Replacement
+              </span>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="bg-slate-800/90 p-7 rounded-2xl border border-slate-700 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center space-x-1 text-amber-400 mb-3">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <span class="text-xs text-slate-400 ml-2">5.0</span>
+              </div>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+                "Outstanding local crew! Other roofers gave me confusing estimates with hidden fees. Summit gave me a crystal-clear written warranty, itemized pricing, and installed beautiful seamless gutters that handled our recent downpour with zero issues."
+              </p>
+            </div>
+            <div class="border-t border-slate-700/80 pt-4 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold text-sm">Sarah K.</p>
+                <p class="text-slate-400 text-xs">Aurora, CO</p>
+              </div>
+              <span class="text-[11px] text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded font-medium border border-amber-500/20">
+                Storm Damage &amp; Gutters
+              </span>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="bg-slate-800/90 p-7 rounded-2xl border border-slate-700 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center space-x-1 text-amber-400 mb-3">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <span class="text-xs text-slate-400 ml-2">5.0</span>
+              </div>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+                "Had a mystery leak in our master bedroom ceiling. Another company tried to sell us an entire $18k replacement. Summit found the cracked chimney flashing, fixed it for a fraction of the cost, and proved their honesty. They have my business for life."
+              </p>
+            </div>
+            <div class="border-t border-slate-700/80 pt-4 flex items-center justify-between">
+              <div>
+                <p class="text-white font-bold text-sm">David L.</p>
+                <p class="text-slate-400 text-xs">Lakewood, CO</p>
+              </div>
+              <span class="text-[11px] text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded font-medium border border-amber-500/20">
+                Repair &amp; Flashing
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 6. ESTIMATE FORM SECTION ================= -->
+  <section id="estimate" class="py-20 bg-slate-50 border-t border-slate-200 scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+        
+        <!-- Form Header Banner -->
+        <div class="bg-brand-navy p-8 sm:p-10 text-white text-center">
+          <div class="flex flex-wrap items-center justify-center gap-2 mb-3">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-950/70 border border-amber-500/30 px-3.5 py-1 rounded-full">
+              Zero Obligation • 100% Free
+            </span>
+            <span class="inline-block text-xs font-semibold text-emerald-300 bg-emerald-950/70 border border-emerald-500/30 px-3 py-1 rounded-full">
+              0% Down Payment Options
+            </span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+            Request Your Free Roof Inspection &amp; Estimate
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-xl mx-auto">
+            Fill out the short form below. A certified Denver roofing estimator will review your property and call you within 1 business day.
+          </p>
+        </div>
+
+        <!-- Form Body -->
+        <form id="estimate-form" class="p-6 sm:p-10 space-y-6" novalidate>
+          
+          <!-- General Alert Box -->
+          <div id="form-general-alert" class="hidden p-4 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 text-xs font-medium" role="alert"></div>
+
+          <!-- Anti-Spam Honeypot Field -->
+          <div class="antispam-field" aria-hidden="true">
+            <label for="company_website_url">Do not fill this field</label>
+            <input type="text" id="company_website_url" name="company_website_url" tabindex="-1" autocomplete="off">
+            <input type="hidden" id="form_rendered_at" name="form_rendered_at" value="">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- Full Name -->
+            <div>
+              <label for="name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                Full Name <span class="text-rose-500">*</span>
+              </label>
+              <input type="text" id="name" name="name" required
+                     placeholder="e.g. John Miller"
+                     class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors">
+              <p id="name-error" class="hidden text-xs text-rose-600 mt-1.5 font-medium" role="alert"></p>
+            </div>
+
+            <!-- Phone Number -->
+            <div>
+              <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                Phone Number <span class="text-rose-500">*</span>
+              </label>
+              <input type="tel" id="phone" name="phone" required
+                     placeholder="(303) 555-0147"
+                     class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm font-mono focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors">
+              <p id="phone-error" class="hidden text-xs text-rose-600 mt-1.5 font-medium" role="alert"></p>
+            </div>
+
+            <!-- Email Address -->
+            <div>
+              <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                Email Address <span class="text-rose-500">*</span>
+              </label>
+              <input type="email" id="email" name="email" required
+                     placeholder="name@example.com"
+                     class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors">
+              <p id="email-error" class="hidden text-xs text-rose-600 mt-1.5 font-medium" role="alert"></p>
+            </div>
+
+            <!-- Street Address -->
+            <div>
+              <label for="address" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                Property Address &amp; City <span class="text-rose-500">*</span>
+              </label>
+              <input type="text" id="address" name="address" required
+                     placeholder="Street Address, Denver / Aurora / etc."
+                     class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors">
+              <p id="address-error" class="hidden text-xs text-rose-600 mt-1.5 font-medium" role="alert"></p>
+            </div>
+
+            <!-- Roof Type Dropdown -->
+            <div>
+              <label for="roof_type" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                Approximate Roof Type <span class="text-rose-500">*</span>
+              </label>
+              <select id="roof_type" name="roof_type" required
+                      class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-white transition-colors">
+                <option value="" disabled selected>Select your roof material...</option>
+                <option value="Asphalt Shingle">Asphalt Shingle (Most Common)</option>
+                <option value="Metal">Standing Seam Metal</option>
+                <option value="Tile">Concrete or Clay Tile</option>
+                <option value="Flat">Flat / TPO / Commercial</option>
+                <option value="Not Sure">Not Sure / Needs Inspection</option>
+              </select>
+              <p id="roof_type-error" class="hidden text-xs text-rose-600 mt-1.5 font-medium" role="alert"></p>
+            </div>
+
+            <!-- Service Needed Dropdown -->
+            <div>
+              <label for="service" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                Service Needed <span class="text-rose-500">*</span>
+              </label>
+              <select id="service" name="service" required
+                      class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 bg-white transition-colors">
+                <option value="" disabled selected>Select primary service...</option>
+                <option value="Replacement">Full Roof Replacement</option>
+                <option value="Repair">Roof Leak / Shingle Repair</option>
+                <option value="Inspection">Free 21-Point Inspection</option>
+                <option value="Gutters">Seamless Gutters &amp; Downspouts</option>
+                <option value="Storm Damage">Hail / Storm Damage Restoration</option>
+                <option value="Other">Other Inquiry</option>
+              </select>
+              <p id="service-error" class="hidden text-xs text-rose-600 mt-1.5 font-medium" role="alert"></p>
+            </div>
+
+          </div>
+
+          <!-- Message (Optional Textarea) -->
+          <div>
+            <label for="message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+              Project Details or Hail Concerns <span class="text-slate-400 font-normal lowercase">(optional)</span>
+            </label>
+            <textarea id="message" name="message" rows="3"
+                      placeholder="Tell us about leaks, age of roof, recent hailstorms, or insurance claim details..."
+                      class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"></textarea>
+          </div>
+
+          <!-- Trust Guarantees & Submit CTA -->
+          <div class="pt-4 space-y-4">
+            <button type="submit" id="submit-btn"
+                    class="w-full py-4 px-8 rounded-xl bg-amber-500 hover:bg-amber-400 text-brand-navy font-black text-base sm:text-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+              <span id="submit-spinner" class="hidden">
+                <svg class="animate-spin h-5 w-5 text-brand-navy" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                </svg>
+              </span>
+              <span id="submit-text">Submit For Free Estimate</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 stroke-[2.5]"></i>
+            </button>
+
+            <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-500 text-center">
+              <span class="flex items-center"><i data-lucide="lock" class="w-3.5 h-3.5 mr-1 text-slate-400"></i> Your information is strictly private</span>
+              <span class="hidden sm:inline">•</span>
+              <span class="flex items-center"><i data-lucide="clock" class="w-3.5 h-3.5 mr-1 text-slate-400"></i> Contacted within 1 business day</span>
+              <span class="hidden sm:inline">•</span>
+              <span class="flex items-center"><i data-lucide="shield" class="w-3.5 h-3.5 mr-1 text-slate-400"></i> No sales pressure guarantee</span>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 9. FOOTER ================= -->
+  <footer class="bg-brand-navy-dark text-slate-300 text-sm border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        
+        <!-- Col 1: Brand & Credentials -->
+        <div class="space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500 flex items-center justify-center text-brand-navy">
+              <i data-lucide="mountain-snow" class="w-6 h-6 stroke-[2.5]"></i>
+            </div>
+            <span class="text-xl font-black text-white tracking-tight">
+              SUMMIT<span class="text-amber-400">ROOFING</span>
+            </span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Denver's premier residential &amp; commercial roofing specialists. 15 years protecting Front Range homeowners with Class 4 impact shingles and craftsmanship warranties.
+          </p>
+          <div class="text-xs font-mono text-slate-400">
+            License #CO-ROOF-78421-LIC • Fully Insured ($2M)
+          </div>
+          <div class="text-xs text-slate-400 flex items-center">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400 mr-1.5 shrink-0"></i>
+            <span>1700 Lincoln St, Suite 1200, Denver, CO 80203</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Service Areas -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase">Front Range Service Area</h4>
+          <ul class="space-y-2 text-xs">
+            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-500 mr-2 shrink-0"></i>Denver Metro &amp; Highlands</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-500 mr-2 shrink-0"></i>Aurora &amp; Centennial</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-500 mr-2 shrink-0"></i>Lakewood &amp; Golden</li>
+            <li class="flex items-center"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-500 mr-2 shrink-0"></i>Littleton &amp; Highlands Ranch</li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Hours & Contact -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase">Direct Contact</h4>
+          <div class="space-y-2 text-xs">
+            <p class="flex items-center">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-amber-400 mr-2 shrink-0"></i>
+              <a href="tel:3035550147" class="text-white font-mono font-bold hover:text-amber-400">(303) 555-0147</a>
+            </p>
+            <p class="flex items-center">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-amber-400 mr-2 shrink-0"></i>
+              <a href="mailto:hello@summitroofing-demo.com" class="hover:text-amber-400">hello@summitroofing-demo.com</a>
+            </p>
+            <p class="flex items-start">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400 mr-2 shrink-0 mt-0.5"></i>
+              <span>Mon–Sat: 8:00 AM – 6:00 PM<br>Sun: Emergency Storm Tarping</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Col 4: Prototype & Leads Portal -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-sm tracking-wider uppercase">Prototype Tools</h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            This is an interactive contractor demo site with active form handling and lead storage.
+          </p>
+          <a href="leads.html" class="inline-flex items-center px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 font-semibold text-xs transition-colors">
+            <i data-lucide="database" class="w-4 h-4 mr-1.5"></i>
+            Open Leads Table (/leads.html)
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+        <p>© <span id="copyright-year">2026</span> Summit Roofing. All rights reserved. Demo prototype site.</p>
+        <p class="flex items-center space-x-4">
+          <span class="text-slate-300">Denver, CO 80203</span>
+          <span>•</span>
+          <a href="#estimate" class="hover:text-amber-400">Free Estimate</a>
+          <span>•</span>
+          <a href="leads.html" class="hover:text-amber-400 font-medium">CRM Leads</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MOBILE FLOATING QUICK-ACTION BAR (MOBILE ONLY) ================= -->
+  <div class="fixed bottom-0 inset-x-0 z-40 bg-brand-navy-dark/95 border-t border-slate-800 p-2.5 md:hidden mobile-sticky-action-bar flex items-center gap-2">
+    <a href="tel:3035550147" class="flex-1 py-3 px-3 rounded-xl bg-slate-800 text-amber-400 font-bold text-sm flex items-center justify-center border border-slate-700 shadow-md">
+      <i data-lucide="phone-call" class="w-4 h-4 mr-1.5"></i>
+      <span>Call (303) 555-0147</span>
+    </a>
+    <a href="#estimate" class="flex-1 py-3 px-3 rounded-xl bg-amber-500 text-brand-navy font-black text-sm flex items-center justify-center shadow-md">
+      <span>Free Estimate</span>
+      <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+    </a>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/form.js"></script>
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Hamburger Menu Toggle with Icon Swapping
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIconWrap = document.getElementById("menu-icon-wrap");
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.toggle("hidden");
+        const isOpen = !isHidden;
+        menuBtn.setAttribute("aria-expanded", isOpen.toString());
+
+        if (menuIconWrap) {
+          menuIconWrap.innerHTML = isOpen ? `<i data-lucide="x" class="w-6 h-6"></i>` : `<i data-lucide="menu" class="w-6 h-6"></i>`;
+          lucide.createIcons();
+        }
+      });
+
+      // Close menu when clicking nav links
+      document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
+          if (menuIconWrap) {
+            menuIconWrap.innerHTML = `<i data-lucide="menu" class="w-6 h-6"></i>`;
+            lucide.createIcons();
+          }
+        });
+      });
+    }
+
+    // Dynamic Copyright Year
+    const yearEl = document.getElementById("copyright-year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
