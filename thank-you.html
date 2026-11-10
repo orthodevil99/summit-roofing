@@ -1,164 +1,1701 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth" style="overflow-x: hidden; max-width: 100vw;">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estimate Request Confirmed | Summit Roofing Denver</title>
-  <meta name="robots" content="noindex, nofollow">
+  <title>Thank You — Estimate Request Received | Summit Roofing Denver</title>
+  <meta name="description" content="Summit Roofing provides licensed &amp; insured roof replacement, hail damage repair, seamless gutters, and free 21-point roof inspections across Denver, Aurora, Lakewood, and Littleton, CO.">
+  <meta name="keywords" content="Denver roofing company, roof replacement Denver, roof repair Aurora CO, hail damage roof inspection Lakewood, Littleton roofer, Summit Roofing demo">
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph / Basic SEO -->
+  <meta property="og:title" content="Summit Roofing — Roof Replacement &amp; Repair in Denver, CO">
+  <meta property="og:description" content="Licensed &amp; Insured • 15 Years Experience • Free Roof Inspection. Serving Denver, Aurora, Lakewood &amp; Littleton.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
 
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Structured Data (Schema.org LocalBusiness / RoofingContractor) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "name": "Summit Roofing (Demo Prototype)",
+    "description": "Roof Replacement & Repair in Denver, Aurora, Lakewood, and Littleton, Colorado.",
+    "telephone": "+1-303-555-0147",
+    "email": "hello@summitroofing-demo.com",
+    "url": "https://summitroofing-demo.vercel.app",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Denver",
+      "addressRegion": "CO",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Denver", "Aurora", "Lakewood", "Littleton"],
+    "openingHours": "Mo-Sa 08:00-18:00",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS v3.4.17 via Approved CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brand: {
-              navy: '#0F2A44',
-              'navy-dark': '#091B2C',
-              amber: '#F59E0B',
-              'amber-dark': '#D97706',
+            navy: {
+              50: '#F0F5FA',
+              100: '#D9E6F2',
+              700: '#163A5F',
+              800: '#0F2A44',
+              900: '#091B2E',
+              950: '#05101C'
+            },
+            amber: {
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+              700: '#B45309'
             }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif']
           }
         }
       }
-    }
+    };
   </script>
 
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col justify-between font-sans antialiased">
+<body class="bg-white text-slate-900 antialiased selection:bg-amber-500 selection:text-slate-950 pb-20 md:pb-0">
 
-  <!-- Header -->
-  <header class="bg-brand-navy text-white border-b border-slate-800 py-4 px-6">
-    <div class="max-w-5xl mx-auto flex items-center justify-between">
-      <a href="index.html" class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-lg bg-amber-500 flex items-center justify-center text-brand-navy">
-          <i data-lucide="mountain-snow" class="w-6 h-6 stroke-[2.5]"></i>
+  <!-- =====================================================================
+       PROTOTYPE / MULTI-PAGE ARCHITECTURE BAR (Quick page & config bar)
+       ===================================================================== -->
+  <div id="demoUtilityBar" class="bg-slate-950 text-slate-200 text-xs border-b border-slate-800 px-3 py-2">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 flex-wrap">
+        <span class="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 border border-amber-500/40 font-semibold px-2 py-0.5 rounded-full text-[11px]">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+          MULTI-PAGE PROTOTYPE
+        </span>
+        <span class="text-slate-400 hidden xl:inline">7 Dedicated Pages • Fictional Data • $0 Stack (Vercel + Google Sheets / Supabase + Formspree)</span>
+      </div>
+      <div class="flex items-center gap-1 sm:gap-1.5 flex-wrap">
+        <button type="button" onclick="switchView('home')" id="utilTabHome" class="px-2 py-1 rounded font-semibold transition bg-amber-500 text-slate-950">
+          Home
+        </button>
+        <button type="button" onclick="switchView('services')" id="utilTabServices" class="px-2 py-1 rounded font-semibold transition bg-slate-800 hover:bg-slate-700 text-slate-200">
+          Services
+        </button>
+        <button type="button" onclick="switchView('gallery')" id="utilTabGallery" class="px-2 py-1 rounded font-semibold transition bg-slate-800 hover:bg-slate-700 text-slate-200">
+          Gallery
+        </button>
+        <button type="button" onclick="switchView('reviews')" id="utilTabReviews" class="px-2 py-1 rounded font-semibold transition bg-slate-800 hover:bg-slate-700 text-slate-200">
+          Reviews
+        </button>
+        <button type="button" onclick="switchView('estimate')" id="utilTabEstimate" class="px-2 py-1 rounded font-semibold transition bg-slate-800 hover:bg-slate-700 text-slate-200">
+          Estimate
+        </button>
+        <button type="button" onclick="switchView('leads')" id="utilTabLeads" class="px-2 py-1 rounded font-semibold transition bg-slate-800 hover:bg-slate-700 text-slate-200 flex items-center gap-1">
+          <span>Leads (/leads.html)</span>
+          <span id="headerLeadCountBadge" class="bg-amber-500 text-slate-950 text-[10px] font-bold px-1.5 py-0.2 rounded-full">4</span>
+        </button>
+        <button type="button" onclick="switchView('thank-you')" id="utilTabThanks" class="px-2 py-1 rounded font-semibold transition bg-slate-800 hover:bg-slate-700 text-slate-200">
+          Thank You
+        </button>
+        <button type="button" onclick="openModal('customizerModal')" class="px-2 py-1 rounded font-medium bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 transition" title="Customize Template for Future Clients">
+          ⚡ Rebrand
+        </button>
+        <button type="button" onclick="openModal('integrationsModal')" class="px-2 py-1 rounded font-medium bg-slate-800 hover:bg-slate-700 text-emerald-300 border border-slate-700 transition" title="Configure Google Sheets, Supabase & Formspree">
+          🔌 Storage
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       1. STICKY MULTI-PAGE HEADER (Mobile-first with Click-to-Call & Active Page Nav)
+       ===================================================================== -->
+  <header class="sticky top-0 z-40 brand-navy-bg text-white shadow-lg border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-1.5 sm:gap-2">
+        <!-- Brand Logo -->
+        <button type="button" onclick="switchView('home')" class="flex items-center gap-2.5 text-left group focus:outline-none">
+          <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-lg bg-amber-500 flex items-center justify-center text-slate-950 shadow-md group-hover:bg-amber-400 transition shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 10.5L12 3l9 7.5" />
+              <path d="M5 9.5V20h14V9.5" />
+              <path d="M8.5 14.5L12 10l3.5 4.5H8.5z" fill="currentColor" />
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <div class="flex items-center gap-1.5">
+              <span id="brandLogoText" class="font-display font-extrabold text-sm sm:text-xl tracking-tight text-white whitespace-nowrap">Summit Roofing</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/10 text-amber-300 border border-amber-400/30 hidden xl:inline-block">DEMO</span>
+            </div>
+            <p id="brandCitySubtext" class="hidden sm:block text-[11px] text-slate-300 font-medium leading-none mt-0.5 whitespace-nowrap">Denver, Aurora, Lakewood &amp; Littleton</p>
+            <p class="block sm:hidden text-[10px] text-amber-300 font-semibold leading-none mt-0.5 whitespace-nowrap">Denver Metro, CO</p>
+          </div>
+        </button>
+
+        <!-- Desktop Multi-Page Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-1.5 xl:gap-2 text-sm font-semibold text-slate-200" aria-label="Main Page Navigation">
+          <button type="button" id="navLink-home" onclick="switchView('home')" class="px-3 py-2 rounded-lg transition bg-white/15 text-amber-400">Home</button>
+          <button type="button" id="navLink-services" onclick="navigateToSection('services')" class="px-3 py-2 rounded-lg transition hover:bg-white/10 hover:text-amber-400">Services</button>
+          <button type="button" id="navLink-gallery" onclick="navigateToSection('gallery')" class="px-3 py-2 rounded-lg transition hover:bg-white/10 hover:text-amber-400">Gallery</button>
+          <button type="button" id="navLink-reviews" onclick="navigateToSection('reviews')" class="px-3 py-2 rounded-lg transition hover:bg-white/10 hover:text-amber-400">Reviews</button>
+          <button type="button" id="navLink-estimate" onclick="navigateToSection('estimate')" class="px-3 py-2 rounded-lg transition hover:bg-white/10 hover:text-amber-400">Estimate</button>
+          <button type="button" id="navLink-leads" onclick="switchView('leads')" class="ml-1 text-amber-300 hover:text-amber-200 font-semibold flex items-center gap-1.5 bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg border border-white/10 transition">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span>Leads</span>
+            <span id="navLeadBadge" class="bg-amber-500 text-slate-950 text-xs font-extrabold px-1.5 py-0.2 rounded-full">4</span>
+          </button>
+        </nav>
+
+        <!-- Header Right CTA Buttons (Prominent Click-to-Call + Free Estimate Page Button) -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="tel:+13035550147" onclick="handlePhoneClick(event, '(303) 555-0147')" class="inline-flex items-center gap-1.5 sm:gap-2 bg-white/10 hover:bg-white/20 active:bg-white/25 text-white border border-white/20 font-bold text-[11px] sm:text-sm px-2 sm:px-4 py-1.5 sm:py-2.5 rounded-lg transition shadow-sm shrink-0" aria-label="Call Summit Roofing at (303) 555-0147">
+            <span class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-amber-500 text-slate-950 flex items-center justify-center shrink-0">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+            </span>
+            <span class="brand-phone-display whitespace-nowrap">(303) 555-0147</span>
+          </a>
+
+          <button type="button" onclick="navigateToSection('estimate', true)" class="hidden sm:inline-flex items-center justify-center brand-amber-bg text-slate-950 font-extrabold text-sm px-4 py-2.5 rounded-lg shadow-md transition whitespace-nowrap">
+            Free Estimate
+          </button>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button type="button" id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden inline-flex items-center justify-center p-2 rounded-lg text-slate-200 hover:text-white hover:bg-white/10 focus:outline-none" aria-label="Toggle Menu" aria-expanded="false">
+            <svg id="menuIconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="menuIconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
         </div>
-        <div>
-          <span class="text-xl font-black text-white">SUMMIT<span class="text-amber-400">ROOFING</span></span>
-          <span class="text-[10px] uppercase tracking-wider text-slate-300 block font-semibold">Denver, Colorado</span>
-        </div>
-      </a>
-      <a href="tel:3035550147" class="hidden sm:flex items-center text-amber-400 font-mono font-bold text-sm bg-slate-800 px-3.5 py-1.5 rounded-lg border border-slate-700">
-        <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
-        (303) 555-0147
-      </a>
+      </div>
+    </div>
+
+    <!-- Mobile Multi-Page Dropdown Menu -->
+    <div id="mobileMenuDropdown" class="hidden lg:hidden bg-navy-900 border-t border-white/10 px-4 pt-3 pb-5 space-y-2">
+      <div class="grid grid-cols-2 gap-2 pb-2">
+        <button type="button" onclick="switchView('home'); closeMobileMenu();" class="text-left px-3 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-sm font-semibold text-white">🏠 Home Page</button>
+        <button type="button" onclick="navigateToSection('services'); closeMobileMenu();" class="text-left px-3 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-sm font-semibold text-white">🛠️ Services Page</button>
+        <button type="button" onclick="navigateToSection('gallery'); closeMobileMenu();" class="text-left px-3 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-sm font-semibold text-white">📷 Photo Gallery</button>
+        <button type="button" onclick="navigateToSection('reviews'); closeMobileMenu();" class="text-left px-3 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-sm font-semibold text-white">⭐ Why Us &amp; Reviews</button>
+        <button type="button" onclick="navigateToSection('estimate', true); closeMobileMenu();" class="text-left px-3 py-2.5 rounded-lg bg-white/5 hover:bg-white/10 text-sm font-semibold text-amber-300">📋 Free Estimate Page</button>
+        <button type="button" onclick="switchView('leads'); closeMobileMenu();" class="text-left px-3 py-2.5 rounded-lg bg-amber-500/20 border border-amber-400/40 text-sm font-semibold text-amber-300 flex items-center justify-between">
+          <span>Leads Table</span>
+          <span id="mobileMenuLeadBadge" class="bg-amber-500 text-slate-950 text-xs font-extrabold px-1.5 rounded-full">4</span>
+        </button>
+      </div>
+      <div class="pt-2 border-t border-white/10 flex flex-col sm:flex-row gap-2">
+        <a href="tel:+13035550147" onclick="handlePhoneClick(event, '(303) 555-0147')" class="w-full py-3 rounded-lg bg-white/10 text-white font-bold text-center text-sm flex items-center justify-center gap-2 border border-white/15">
+          <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+          <span>Call Now: <span class="brand-phone-display">(303) 555-0147</span></span>
+        </a>
+        <button type="button" onclick="navigateToSection('estimate', true); closeMobileMenu();" class="w-full py-3 rounded-lg brand-amber-bg text-slate-950 font-extrabold text-center text-sm shadow">
+          Open Free Estimate Page →
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Main Content Card -->
-  <main class="flex-grow flex items-center justify-center p-4 sm:p-6 my-8">
-    <div class="max-w-2xl w-full bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden text-center">
-      
-      <!-- Top Success Badge -->
-      <div class="bg-brand-navy text-white p-8 sm:p-10 relative">
-        <div class="w-20 h-20 rounded-full bg-emerald-500/20 border-2 border-emerald-400 text-emerald-400 flex items-center justify-center mx-auto mb-4">
-          <i data-lucide="check" class="w-10 h-10 stroke-[3]"></i>
+  <!-- =====================================================================
+       PAGE 1: HOME PAGE (index.html — Hero + Executive Overview + Page Portals)
+       ===================================================================== -->
+  <main id="view-home" class="block">
+
+    <!-- HERO SECTION -->
+    <section class="relative brand-navy-dark-bg text-white overflow-hidden py-10 sm:py-16 lg:py-20 border-b-4 border-amber-500">
+      <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#F59E0B 1px, transparent 1px); background-size: 28px 28px;"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          
+          <!-- Left Column: Copy, Buttons & Trust Badges -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex flex-wrap items-center gap-2 bg-white/10 border border-white/15 rounded-full px-3.5 py-1.5 text-xs sm:text-sm font-medium text-amber-300">
+              <svg class="w-4 h-4 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+              <span id="heroServiceAreaPill">Serving Denver, Aurora, Lakewood &amp; Littleton, CO</span>
+            </div>
+
+            <h1 id="heroHeadline" class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[52px] leading-[1.12] tracking-tight text-white">
+              Roof Replacement &amp; Repair in Denver
+            </h1>
+
+            <p id="heroSubheadline" class="text-base sm:text-lg text-slate-200 max-w-2xl leading-relaxed font-normal">
+              Built to withstand Colorado Front Range hailstorms, high winds, and heavy snow. Get an honest, photo-documented roof inspection and itemized written quote from a local Denver crew—never high-pressure sales.
+            </p>
+
+            <!-- 2 Hero CTA Buttons: Get Free Estimate + Call Now -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
+              <button type="button" onclick="navigateToSection('estimate', true)" class="cta-pulse inline-flex items-center justify-center gap-2.5 brand-amber-bg text-slate-950 font-extrabold text-base sm:text-lg px-7 py-4 rounded-xl shadow-lg transition transform active:scale-[0.99]">
+                <span>Get Free Estimate</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </button>
+
+              <a href="tel:+13035550147" onclick="handlePhoneClick(event, '(303) 555-0147')" class="inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 text-white border-2 border-white/25 font-bold text-base sm:text-lg px-6 py-3.5 rounded-xl transition">
+                <svg class="w-5 h-5 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                <span>Call Now: <span class="brand-phone-display">(303) 555-0147</span></span>
+              </a>
+            </div>
+
+            <!-- 3 Trust Badges (Licensed & Insured, Free Inspection, 15 Years) -->
+            <div class="pt-4 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-3">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-400 shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-white leading-tight">Licensed &amp; Insured</p>
+                  <p class="text-xs text-slate-300 mt-0.5">CO Demo Lic #88412</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-3">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-400 shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-white leading-tight">Free Inspection</p>
+                  <p class="text-xs text-slate-300 mt-0.5">21-Pt Photo Report</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-3">
+                <div class="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-400/40 flex items-center justify-center text-amber-400 shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-white leading-tight">15 Years Experience</p>
+                  <p class="text-xs text-slate-300 mt-0.5">Local Denver Crew</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: 1 Hero Photo with Credential Overlay -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/15 bg-slate-900">
+              <img
+                src="images/hero-denver-roof.jpg"
+                alt="Summit Roofing crew completing an architectural shingle roof replacement in Denver with the Rocky Mountains in the background"
+                width="1120"
+                height="630"
+                fetchpriority="high"
+                class="w-full h-[270px] sm:h-[360px] lg:h-[400px] object-cover"
+              >
+              <div class="absolute top-3 right-3 bg-slate-950/85 backdrop-blur-sm text-amber-300 text-[11px] font-semibold px-2.5 py-1 rounded-md border border-amber-400/30">
+                Demo Photo Placeholder • Denver, CO
+              </div>
+              <div class="bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent p-4 sm:p-5 text-white">
+                <div class="flex items-center justify-between gap-2">
+                  <div>
+                    <div class="flex items-center gap-1 text-amber-400 text-sm font-bold">
+                      <span>★★★★★</span>
+                      <span class="text-white ml-1">4.9 / 5.0 Customer Rating</span>
+                    </div>
+                    <p class="text-xs text-slate-300 mt-0.5">Class 4 Impact-Resistant Shingles • Metal • Tile • Flat TPO</p>
+                  </div>
+                  <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-bold px-2.5 py-1 rounded-lg whitespace-nowrap">
+                    1-Day Callback
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
-          Thanks! We'll call you within 1 business day.
+      </div>
+    </section>
+
+    <!-- HOME SECTION 2: CORE SERVICES OVERVIEW (Links to Dedicated Services Page & Estimate Page) -->
+    <section class="py-14 sm:py-20 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-amber-700 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full mb-2.5">
+              Our Roofing Specialties
+            </span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-navy-800">
+              Complete Roofing &amp; Gutter Solutions
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
+              Explore our 6 core residential and commercial services below, or visit our dedicated Services page for full material comparisons.
+            </p>
+          </div>
+          <button type="button" onclick="switchView('services')" class="inline-flex items-center justify-center gap-2 brand-navy-bg text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-sm transition whitespace-nowrap">
+            <span>Open Full Services Page</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center font-extrabold">01</div>
+                <span class="text-xs font-bold text-navy-800 bg-navy-50 px-2.5 py-1 rounded-md border border-navy-100">Most Popular</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Roof Replacement</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Full tear-off and installation of Class 4 impact shingles, standing seam metal, and tile roofs with a 10-year workmanship warranty.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+              <button type="button" onclick="switchView('services')" class="text-slate-600 hover:text-navy-800">Service Specs</button>
+              <button type="button" onclick="selectServiceAndScroll('Replacement')" class="text-navy-800 hover:text-amber-600">Get Quote →</button>
+            </div>
+          </div>
+
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center font-extrabold">02</div>
+                <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">Same-Week Fix</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Roof Repair</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Permanent repairs for active roof leaks, blown-off shingles, cracked plumbing vent boots, and worn chimney or valley metal flashing.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+              <button type="button" onclick="switchView('services')" class="text-slate-600 hover:text-navy-800">Service Specs</button>
+              <button type="button" onclick="selectServiceAndScroll('Repair')" class="text-navy-800 hover:text-amber-600">Get Quote →</button>
+            </div>
+          </div>
+
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center font-extrabold">03</div>
+                <span class="text-xs font-bold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">100% Free</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Roof Inspection</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                21-point rooftop and attic inspection with digital photo reports for homeowners, home buyers, and annual maintenance.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+              <button type="button" onclick="switchView('services')" class="text-slate-600 hover:text-navy-800">Service Specs</button>
+              <button type="button" onclick="selectServiceAndScroll('Inspection')" class="text-navy-800 hover:text-amber-600">Book Free →</button>
+            </div>
+          </div>
+
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center font-extrabold">04</div>
+                <span class="text-xs font-bold text-navy-800 bg-navy-50 px-2.5 py-1 rounded-md border border-navy-100">5" &amp; 6" Seamless</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Gutters</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Custom K-style seamless aluminum gutters, oversized downspouts, and micro-mesh leaf guards built for Colorado snowmelt.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+              <button type="button" onclick="switchView('services')" class="text-slate-600 hover:text-navy-800">Service Specs</button>
+              <button type="button" onclick="selectServiceAndScroll('Gutters')" class="text-navy-800 hover:text-amber-600">Get Quote →</button>
+            </div>
+          </div>
+
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center font-extrabold">05</div>
+                <span class="text-xs font-bold text-red-800 bg-red-50 px-2.5 py-1 rounded-md border border-red-200">Hail &amp; Wind</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Storm Damage Repair</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Rapid emergency roof tarping, hail impact documentation, and itemized scope verification to restore storm-damaged roofs fast.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+              <button type="button" onclick="switchView('services')" class="text-slate-600 hover:text-navy-800">Service Specs</button>
+              <button type="button" onclick="selectServiceAndScroll('Storm Damage')" class="text-navy-800 hover:text-amber-600">Get Quote →</button>
+            </div>
+          </div>
+
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-11 h-11 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center font-extrabold">06</div>
+                <span class="text-xs font-bold text-navy-800 bg-navy-50 px-2.5 py-1 rounded-md border border-navy-100">TPO • EPDM • Metal</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Commercial Roofing</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Heat-welded TPO flat roof membranes, EPDM systems, and elastomeric roof coatings for Denver retail, office, and HOA buildings.
+              </p>
+            </div>
+            <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs sm:text-sm font-bold">
+              <button type="button" onclick="switchView('services')" class="text-slate-600 hover:text-navy-800">Service Specs</button>
+              <button type="button" onclick="selectServiceAndScroll('Replacement', 'Flat')" class="text-navy-800 hover:text-amber-600">Get Quote →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOME SECTION 3: FEATURED PROJECT GALLERY PREVIEW + REVIEWS SNAPSHOT -->
+    <section class="py-14 sm:py-20 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-navy-800 bg-navy-50 border border-navy-100 px-3 py-1 rounded-full mb-2.5">
+              Recent Work Across Denver Metro
+            </span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-navy-800">
+              Featured Roofing Projects
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2">
+              Click any photo to inspect in full screen, or open our 8-project Photo Gallery page to filter by city.
+            </p>
+          </div>
+          <button type="button" onclick="switchView('gallery')" class="inline-flex items-center justify-center gap-2 brand-navy-bg text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-sm transition whitespace-nowrap">
+            <span>View All 8 Projects in Gallery</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <!-- 4 Highlight Gallery Cards on Home Page -->
+        <div id="homeFeaturedGalleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Home Trust + Review Callout Banner -->
+        <div class="brand-navy-bg text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-navy-700 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4">
+            <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-amber-300 bg-white/10 px-3 py-1 rounded-full">
+              Why Choose Summit Roofing
+            </span>
+            <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white">
+              Free Inspection • Written 10-Yr Warranty • Local Denver Crew • Fast 1-Day Response
+            </h3>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              "After the June hailstorm tore up our asphalt shingles, Summit Roofing came out the next morning for a free inspection, showed us clear photos of the bruised mat, and replaced the whole roof in two days." — <strong class="text-amber-300">Mike R., Denver (5.0 ★)</strong>
+            </p>
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button type="button" onclick="switchView('reviews')" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm border border-white/20 transition">
+                Read All Reviews &amp; Credentials →
+              </button>
+              <button type="button" onclick="navigateToSection('estimate', true)" class="px-5 py-3 rounded-xl brand-amber-bg text-slate-950 font-extrabold text-xs sm:text-sm shadow transition">
+                Request Free Estimate →
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 grid grid-cols-2 gap-3 text-center">
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <p class="font-display font-extrabold text-2xl sm:text-3xl text-amber-400">15 Yrs</p>
+              <p class="text-xs text-slate-300 mt-1">Front Range Experience</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <p class="font-display font-extrabold text-2xl sm:text-3xl text-amber-400">10-Yr</p>
+              <p class="text-xs text-slate-300 mt-1">Written Labor Warranty</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <p class="font-display font-extrabold text-2xl sm:text-3xl text-amber-400">100%</p>
+              <p class="text-xs text-slate-300 mt-1">Free Photo Inspection</p>
+            </div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+              <p class="font-display font-extrabold text-2xl sm:text-3xl text-amber-400">1-Day</p>
+              <p class="text-xs text-slate-300 mt-1">Guaranteed Callback</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       PAGE 2: DEDICATED SERVICES PAGE (services.html — 6 Services + Material Table)
+       ===================================================================== -->
+  <section id="view-services" class="hidden">
+    <!-- Page Hero Header -->
+    <div class="brand-navy-dark-bg text-white py-10 sm:py-14 border-b-4 border-amber-500">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-2 text-xs text-slate-300 mb-3">
+          <button type="button" onclick="switchView('home')" class="hover:text-amber-400 underline">Home</button>
+          <span>/</span>
+          <span class="text-amber-400 font-bold">Services</span>
+        </div>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div>
+            <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white">
+              Roofing &amp; Gutter Services in Denver
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-lg mt-3 max-w-2xl">
+              Engineered for Colorado's high altitude UV, severe hailstorms, and heavy winter snow loads. Click any service below to pre-select it on our Free Estimate page.
+            </p>
+          </div>
+          <button type="button" onclick="navigateToSection('estimate', true)" class="brand-amber-bg text-slate-950 font-extrabold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg whitespace-nowrap self-start lg:self-auto">
+            Request Free Estimate →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 Detailed Service Cards -->
+    <div id="services" class="scroll-mt-24 py-14 sm:py-20 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+        
+        <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1: Roof Replacement -->
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center shadow-sm">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                </div>
+                <span class="text-xs font-bold text-navy-800 bg-navy-50 px-2.5 py-1 rounded-md border border-navy-100">Most Popular</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Roof Replacement</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Full tear-off and installation of Class 4 impact shingles, standing seam metal, and tile roofs with a 10-year workmanship warranty.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+                <li>• UL 2218 Class 4 Impact-Resistant Shingles</li>
+                <li>• High-Temp Ice &amp; Water Shield in Valleys</li>
+                <li>• Full Magnetic Nail Sweep &amp; City Permit</li>
+              </ul>
+            </div>
+            <button type="button" onclick="selectServiceAndScroll('Replacement')" class="mt-5 pt-4 border-t border-slate-100 inline-flex items-center justify-between w-full text-sm font-bold text-navy-800 hover:text-amber-600 transition group">
+              <span>Get Replacement Quote</span>
+              <span class="text-amber-600 group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+          </div>
+
+          <!-- Card 2: Roof Repair -->
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center shadow-sm">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg>
+                </div>
+                <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">Same-Week Fix</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Roof Repair</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Permanent repairs for active roof leaks, blown-off shingles, cracked plumbing vent boots, and worn chimney or valley metal flashing.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+                <li>• Custom Step &amp; Counter Chimney Flashing</li>
+                <li>• Neoprene &amp; Lead Pipe Boot Replacements</li>
+                <li>• Wind-Damaged Shingle Color Matching</li>
+              </ul>
+            </div>
+            <button type="button" onclick="selectServiceAndScroll('Repair')" class="mt-5 pt-4 border-t border-slate-100 inline-flex items-center justify-between w-full text-sm font-bold text-navy-800 hover:text-amber-600 transition group">
+              <span>Request Repair Estimate</span>
+              <span class="text-amber-600 group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+          </div>
+
+          <!-- Card 3: Roof Inspection -->
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center shadow-sm">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                </div>
+                <span class="text-xs font-bold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200">100% Free</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Roof Inspection</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                21-point rooftop and attic inspection with digital photo reports for homeowners, home buyers, and annual maintenance.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+                <li>• High-Res Photo Report of Shingles &amp; Vents</li>
+                <li>• Attic Ventilation &amp; Moisture Deck Check</li>
+                <li>• Honest Remaining Roof Lifespan Assessment</li>
+              </ul>
+            </div>
+            <button type="button" onclick="selectServiceAndScroll('Inspection')" class="mt-5 pt-4 border-t border-slate-100 inline-flex items-center justify-between w-full text-sm font-bold text-navy-800 hover:text-amber-600 transition group">
+              <span>Book Free Inspection</span>
+              <span class="text-amber-600 group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+          </div>
+
+          <!-- Card 4: Gutters -->
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center shadow-sm">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                </div>
+                <span class="text-xs font-bold text-navy-800 bg-navy-50 px-2.5 py-1 rounded-md border border-navy-100">5" &amp; 6" Seamless</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Gutters</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Custom K-style seamless aluminum gutters, oversized downspouts, and micro-mesh leaf guards built for Colorado snowmelt.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+                <li>• Heavy-Gauge .032 Seamless Aluminum</li>
+                <li>• Hidden Hanger Brackets Spaced Every 24"</li>
+                <li>• Stainless Steel Pine-Needle Leaf Guards</li>
+              </ul>
+            </div>
+            <button type="button" onclick="selectServiceAndScroll('Gutters')" class="mt-5 pt-4 border-t border-slate-100 inline-flex items-center justify-between w-full text-sm font-bold text-navy-800 hover:text-amber-600 transition group">
+              <span>Get Gutter Estimate</span>
+              <span class="text-amber-600 group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+          </div>
+
+          <!-- Card 5: Storm Damage Repair -->
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center shadow-sm">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <span class="text-xs font-bold text-red-800 bg-red-50 px-2.5 py-1 rounded-md border border-red-200">Hail &amp; Wind</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Storm Damage Repair</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Rapid emergency roof tarping, hail impact documentation, and itemized scope verification to restore storm-damaged roofs fast.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+                <li>• Same-Day Emergency Leak Tarping</li>
+                <li>• Hail Test Square &amp; Soft-Metal Photo Proof</li>
+                <li>• On-Site Adjuster Walk-Through Support</li>
+              </ul>
+            </div>
+            <button type="button" onclick="selectServiceAndScroll('Storm Damage')" class="mt-5 pt-4 border-t border-slate-100 inline-flex items-center justify-between w-full text-sm font-bold text-navy-800 hover:text-amber-600 transition group">
+              <span>Report Storm Damage</span>
+              <span class="text-amber-600 group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+          </div>
+
+          <!-- Card 6: Commercial Roofing -->
+          <div class="contractor-card bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 rounded-xl brand-navy-bg text-amber-400 flex items-center justify-center shadow-sm">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                </div>
+                <span class="text-xs font-bold text-navy-800 bg-navy-50 px-2.5 py-1 rounded-md border border-navy-100">TPO • EPDM • Metal</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-navy-800 mb-2">Commercial Roofing</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Heat-welded TPO flat roof membranes, EPDM systems, and elastomeric roof coatings for Denver retail, office, and HOA buildings.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-slate-600 border-t border-slate-100 pt-3">
+                <li>• 60-Mil &amp; 80-Mil Energy-Star White TPO</li>
+                <li>• Tapered Polyiso Insulation &amp; Ponding Fixes</li>
+                <li>• Multi-Family HOA &amp; Warehouse Maintenance</li>
+              </ul>
+            </div>
+            <button type="button" onclick="selectServiceAndScroll('Replacement', 'Flat')" class="mt-5 pt-4 border-t border-slate-100 inline-flex items-center justify-between w-full text-sm font-bold text-navy-800 hover:text-amber-600 transition group">
+              <span>Request Commercial Bid</span>
+              <span class="text-amber-600 group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Roofing Material Comparison Table -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+          <div class="p-6 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h2 class="font-display font-extrabold text-xl sm:text-2xl text-navy-800">Colorado Roofing Material Comparison</h2>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">Compare roof systems we install across Denver, Aurora, Lakewood, and Littleton.</p>
+            </div>
+            <span class="text-xs font-bold text-amber-800 bg-amber-50 border border-amber-200 px-3 py-1 rounded-lg self-start sm:self-auto">
+              All Systems Include 10-Yr Labor Warranty
+            </span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr class="brand-navy-bg text-white text-xs uppercase tracking-wider">
+                  <th class="py-3.5 px-4 font-bold">Roofing System</th>
+                  <th class="py-3.5 px-4 font-bold">Colorado Lifespan</th>
+                  <th class="py-3.5 px-4 font-bold">Hail &amp; Wind Rating</th>
+                  <th class="py-3.5 px-4 font-bold">Best For</th>
+                  <th class="py-3.5 px-4 font-bold">Estimate</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr class="hover:bg-slate-50">
+                  <td class="py-3.5 px-4 font-bold text-navy-800">Asphalt Shingle (Class 4)</td>
+                  <td class="py-3.5 px-4 text-slate-600">25–30 Years</td>
+                  <td class="py-3.5 px-4 text-emerald-700 font-semibold">UL 2218 Class 4 • 130 MPH</td>
+                  <td class="py-3.5 px-4 text-slate-600">Suburban homes &amp; insurance discounts</td>
+                  <td class="py-3.5 px-4"><button type="button" onclick="selectServiceAndScroll('Replacement', 'Asphalt Shingle')" class="text-xs font-bold text-amber-600 hover:underline">Quote Shingle →</button></td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="py-3.5 px-4 font-bold text-navy-800">Standing Seam Metal</td>
+                  <td class="py-3.5 px-4 text-slate-600">45–60+ Years</td>
+                  <td class="py-3.5 px-4 text-emerald-700 font-semibold">Class 4 Impact • 140+ MPH</td>
+                  <td class="py-3.5 px-4 text-slate-600">Foothill snow shedding &amp; modern homes</td>
+                  <td class="py-3.5 px-4"><button type="button" onclick="selectServiceAndScroll('Replacement', 'Metal')" class="text-xs font-bold text-amber-600 hover:underline">Quote Metal →</button></td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="py-3.5 px-4 font-bold text-navy-800">Clay &amp; Concrete Tile</td>
+                  <td class="py-3.5 px-4 text-slate-600">50+ Years</td>
+                  <td class="py-3.5 px-4 text-emerald-700 font-semibold">Class A Fire • High Thermal Mass</td>
+                  <td class="py-3.5 px-4 text-slate-600">Stucco, Mediterranean &amp; custom estates</td>
+                  <td class="py-3.5 px-4"><button type="button" onclick="selectServiceAndScroll('Replacement', 'Tile')" class="text-xs font-bold text-amber-600 hover:underline">Quote Tile →</button></td>
+                </tr>
+                <tr class="hover:bg-slate-50">
+                  <td class="py-3.5 px-4 font-bold text-navy-800">Commercial Flat TPO / EPDM</td>
+                  <td class="py-3.5 px-4 text-slate-600">20–30 Years</td>
+                  <td class="py-3.5 px-4 text-emerald-700 font-semibold">Heat-Welded Waterproof Seams</td>
+                  <td class="py-3.5 px-4 text-slate-600">Commercial buildings, garages &amp; low-slope</td>
+                  <td class="py-3.5 px-4"><button type="button" onclick="selectServiceAndScroll('Replacement', 'Flat')" class="text-xs font-bold text-amber-600 hover:underline">Quote Flat Roof →</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PAGE 3: DEDICATED PHOTO GALLERY PAGE (gallery.html — 8 Filterable Projects + Lightbox)
+       ===================================================================== -->
+  <section id="view-gallery" class="hidden">
+    <!-- Page Hero Header -->
+    <div class="brand-navy-dark-bg text-white py-10 sm:py-14 border-b-4 border-amber-500">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-2 text-xs text-slate-300 mb-3">
+          <button type="button" onclick="switchView('home')" class="hover:text-amber-400 underline">Home</button>
+          <span>/</span>
+          <span class="text-amber-400 font-bold">Project Gallery</span>
+        </div>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div>
+            <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white">
+              Denver Metro Roofing Project Gallery
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-lg mt-3 max-w-2xl">
+              Inspect 8 completed residential and commercial projects across Denver, Aurora, Lakewood, and Littleton. Tap or click any photo to open the high-resolution Lightbox viewer.
+            </p>
+          </div>
+          <button type="button" onclick="navigateToSection('estimate', true)" class="brand-amber-bg text-slate-950 font-extrabold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg whitespace-nowrap self-start lg:self-auto">
+            Get a Quote Like These →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="gallery" class="scroll-mt-24 py-14 sm:py-20 bg-white border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+          <span class="text-xs sm:text-sm font-bold text-navy-800">Filter Projects by Service Area:</span>
+          <!-- City Filter Buttons -->
+          <div class="flex items-center gap-1.5 flex-wrap" role="group" aria-label="Filter gallery by city">
+            <button type="button" onclick="filterGallery('All')" id="galFilter-All" class="gal-filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition brand-navy-bg text-white shadow-sm">
+              All (8)
+            </button>
+            <button type="button" onclick="filterGallery('Denver')" id="galFilter-Denver" class="gal-filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white hover:bg-slate-200 text-slate-700 border border-slate-200">
+              Denver
+            </button>
+            <button type="button" onclick="filterGallery('Aurora')" id="galFilter-Aurora" class="gal-filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white hover:bg-slate-200 text-slate-700 border border-slate-200">
+              Aurora
+            </button>
+            <button type="button" onclick="filterGallery('Lakewood')" id="galFilter-Lakewood" class="gal-filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white hover:bg-slate-200 text-slate-700 border border-slate-200">
+              Lakewood
+            </button>
+            <button type="button" onclick="filterGallery('Littleton')" id="galFilter-Littleton" class="gal-filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white hover:bg-slate-200 text-slate-700 border border-slate-200">
+              Littleton
+            </button>
+          </div>
+        </div>
+
+        <!-- 8-Photo Grid -->
+        <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- Populated dynamically via JS from CLIENT_CONFIG.gallery -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PAGE 4: DEDICATED WHY US & REVIEWS PAGE (reviews.html — 4 Pillars + Credentials + 3 Reviews)
+       ===================================================================== -->
+  <section id="view-reviews" class="hidden">
+    <!-- Page Hero Header -->
+    <div class="brand-navy-dark-bg text-white py-10 sm:py-14 border-b-4 border-amber-500">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-2 text-xs text-slate-300 mb-3">
+          <button type="button" onclick="switchView('home')" class="hover:text-amber-400 underline">Home</button>
+          <span>/</span>
+          <span class="text-amber-400 font-bold">Why Us &amp; Reviews</span>
+        </div>
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div>
+            <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white">
+              Why Denver Homeowners Trust Summit Roofing
+            </h1>
+            <p class="text-slate-300 text-sm sm:text-lg mt-3 max-w-2xl">
+              Licensed &amp; Insured, 15 Years Experience, and a 10-Year Written Workmanship Warranty. Read our homeowner reviews and inspect our demo credential placeholders below.
+            </p>
+          </div>
+          <button type="button" onclick="navigateToSection('estimate', true)" class="brand-amber-bg text-slate-950 font-extrabold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg whitespace-nowrap self-start lg:self-auto">
+            Schedule Free Inspection →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="reviews" class="scroll-mt-24 py-14 sm:py-20 brand-navy-bg text-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          
+          <!-- Left Column: Why Choose Summit Roofing (4 Core Bullets + Demo Credentials) -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-amber-300 bg-white/10 border border-white/15 px-3 py-1 rounded-full mb-3">
+                The Summit Standard
+              </span>
+              <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-white leading-tight">
+                No Storm Chasers. Just Honest Local Workmanship.
+              </h2>
+              <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
+                Every roof we install is built to meet or exceed Denver, Aurora, Lakewood, and Littleton wind and impact building codes.
+              </p>
+            </div>
+
+            <!-- 4 Required Bullet Points -->
+            <div class="space-y-3.5">
+              <div class="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-xl p-4">
+                <div class="w-9 h-9 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-extrabold shrink-0 mt-0.5">
+                  ✓
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-base text-white">Free Inspection</h3>
+                  <p class="text-xs sm:text-sm text-slate-300 mt-0.5">Complete 21-point rooftop &amp; attic check with high-res photos so you see exactly what we see—zero obligation.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-xl p-4">
+                <div class="w-9 h-9 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-extrabold shrink-0 mt-0.5">
+                  ✓
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-base text-white">Written Warranty</h3>
+                  <p class="text-xs sm:text-sm text-slate-300 mt-0.5">Every replacement includes a 10-year transferable workmanship warranty in writing plus manufacturer shingle coverage.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-xl p-4">
+                <div class="w-9 h-9 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-extrabold shrink-0 mt-0.5">
+                  ✓
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-base text-white">Local Crew</h3>
+                  <p class="text-xs sm:text-sm text-slate-300 mt-0.5">Based right here in Denver for 15 years. Our crews protect your landscaping and run magnetic nail sweeps twice before leaving.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3.5 bg-white/5 border border-white/10 rounded-xl p-4">
+                <div class="w-9 h-9 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-extrabold shrink-0 mt-0.5">
+                  ✓
+                </div>
+                <div>
+                  <h3 class="font-display font-bold text-base text-white">Fast Response</h3>
+                  <p class="text-xs sm:text-sm text-slate-300 mt-0.5">We return all estimate requests within 1 business day and dispatch same-day emergency tarping for active leaks.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business Credentials Demo Placeholders Box -->
+            <div class="bg-navy-900/90 border border-amber-400/30 rounded-xl p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-300">Business Credentials (Demo Placeholders)</span>
+                <span class="text-[11px] bg-white/10 px-2 py-0.5 rounded text-slate-300">Swap for Client</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-xs text-slate-300">
+                <div class="bg-white/5 px-3 py-2 rounded border border-white/5">
+                  <span class="block text-slate-400 text-[10px]">STATE / CITY LICENSE</span>
+                  <span class="font-semibold text-white">CO #DEMO-2026-8841</span>
+                </div>
+                <div class="bg-white/5 px-3 py-2 rounded border border-white/5">
+                  <span class="block text-slate-400 text-[10px]">INSURANCE COVERAGE</span>
+                  <span class="font-semibold text-white">$2M GL + Workers' Comp</span>
+                </div>
+                <div class="bg-white/5 px-3 py-2 rounded border border-white/5">
+                  <span class="block text-slate-400 text-[10px]">SHINGLE CERTIFICATION</span>
+                  <span class="font-semibold text-white">Master Installer [Demo]</span>
+                </div>
+                <div class="bg-white/5 px-3 py-2 rounded border border-white/5">
+                  <span class="block text-slate-400 text-[10px]">LOCAL RATING</span>
+                  <span class="font-semibold text-white">A+ Accredited [Demo]</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: 3 Customer Reviews (with Demo Placeholders) -->
+          <div class="lg:col-span-7 space-y-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/10 pb-4">
+              <div>
+                <h3 class="font-display font-bold text-xl sm:text-2xl text-white">Recent Homeowner Reviews</h3>
+                <p class="text-xs sm:text-sm text-slate-300">Sample customer testimonials clearly marked as demo placeholders for client customization.</p>
+              </div>
+              <div class="flex items-center gap-2 bg-white/10 px-3.5 py-2 rounded-xl border border-white/15">
+                <span class="text-amber-400 font-bold text-lg">★★★★★</span>
+                <span class="text-sm font-extrabold text-white">5.0 Avg</span>
+              </div>
+            </div>
+
+            <!-- Review 1 -->
+            <article class="bg-white text-slate-900 rounded-2xl p-6 shadow-lg border border-slate-100">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-navy-800 text-amber-400 font-display font-extrabold flex items-center justify-center text-sm">
+                    MR
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-base text-navy-800">Mike R., Denver — 5 stars</h4>
+                    <p class="text-xs text-slate-500">Class 4 Impact Shingle Replacement • Wash Park, Denver</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-500 font-bold text-sm tracking-tight" aria-label="5 out of 5 stars">★★★★★</span>
+                  <span class="text-[10px] font-semibold uppercase px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Demo Review</span>
+                </div>
+              </div>
+              <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                "After the June hailstorm tore up our asphalt shingles, Summit Roofing came out the next morning for a free inspection, showed us clear photos of the bruised mat, and replaced the whole roof in two days. Our yard was spotless—not a single nail left behind."
+              </p>
+            </article>
+
+            <!-- Review 2 -->
+            <article class="bg-white text-slate-900 rounded-2xl p-6 shadow-lg border border-slate-100">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-navy-800 text-amber-400 font-display font-extrabold flex items-center justify-center text-sm">
+                    ST
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-base text-navy-800">Sarah T., Lakewood — 5 stars</h4>
+                    <p class="text-xs text-slate-500">Chimney Flashing &amp; Leak Repair • Green Mountain, Lakewood</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-500 font-bold text-sm tracking-tight" aria-label="5 out of 5 stars">★★★★★</span>
+                  <span class="text-[10px] font-semibold uppercase px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Demo Review</span>
+                </div>
+              </div>
+              <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                "Two other roofers tried to sell us a $16,000 replacement for a leak around our fireplace. Summit's inspector climbed up, photographed the rusted step flashing, and fixed it permanently for a fraction of the cost. Truly honest local pros."
+              </p>
+            </article>
+
+            <!-- Review 3 -->
+            <article class="bg-white text-slate-900 rounded-2xl p-6 shadow-lg border border-slate-100">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-navy-800 text-amber-400 font-display font-extrabold flex items-center justify-center text-sm">
+                    DK
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-base text-navy-800">David &amp; Elena K., Aurora — 5 stars</h4>
+                    <p class="text-xs text-slate-500">Roof Replacement &amp; 6" Seamless Gutters • Southlands, Aurora</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-500 font-bold text-sm tracking-tight" aria-label="5 out of 5 stars">★★★★★</span>
+                  <span class="text-[10px] font-semibold uppercase px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">Demo Review</span>
+                </div>
+              </div>
+              <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                "Communication was top notch from the first call to final walk-through. The crew arrived at 7:30 AM sharp, installed our new architectural shingles and bronze seamless gutters, and gave us our written 10-year warranty packet the same day."
+              </p>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PAGE 5: DEDICATED FREE ESTIMATE PAGE (estimate.html — Contact & Validated Lead Form)
+       ===================================================================== -->
+  <section id="view-estimate" class="hidden">
+    <!-- Page Hero Header -->
+    <div class="brand-navy-dark-bg text-white py-10 sm:py-14 border-b-4 border-amber-500">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center gap-2 text-xs text-slate-300 mb-3">
+          <button type="button" onclick="switchView('home')" class="hover:text-amber-400 underline">Home</button>
+          <span>/</span>
+          <span class="text-amber-400 font-bold">Free Estimate</span>
+        </div>
+        <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-white">
+          Request Your Free Roof Estimate
         </h1>
-        <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-lg mx-auto">
-          Your free roof inspection request has been logged and assigned to our Denver Front Range estimating team.
+        <p class="text-slate-300 text-sm sm:text-lg mt-3 max-w-2xl">
+          Complete the form below and our local Denver estimator will call you within 1 business day to schedule your complimentary 21-point inspection.
         </p>
       </div>
+    </div>
 
-      <!-- Personalized Lead Confirmation (Dynamically updated if available) -->
-      <div id="lead-summary-card" class="hidden p-4 mx-6 my-4 bg-amber-50 border border-amber-200 rounded-xl text-left text-xs text-amber-900">
-        <p class="font-bold text-amber-800 mb-1">Confirmation Details Logged:</p>
-        <p><span class="font-medium">Name:</span> <span id="lead-name"></span></p>
-        <p><span class="font-medium">Phone:</span> <span id="lead-phone" class="font-mono"></span></p>
-        <p><span class="font-medium">Property:</span> <span id="lead-address"></span></p>
+    <div id="estimate" class="scroll-mt-24 py-14 sm:py-20 bg-slate-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          
+          <!-- Left Column: Direct Call Info, Process Steps & Service Area -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-amber-700 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full mb-3">
+                Free No-Obligation Quote
+              </span>
+              <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-navy-800 leading-tight">
+                Fast 1-Business-Day Response Across the Denver Metro
+              </h2>
+              <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+                Prefer to speak right away? Call our Denver office directly or use the form to log your request directly into our lead tracker.
+              </p>
+            </div>
+
+            <!-- Direct Click-to-Call Card -->
+            <div class="brand-navy-bg text-white rounded-2xl p-6 shadow-md border border-navy-700">
+              <p class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-1">Speak With Our Denver Office</p>
+              <a href="tel:+13035550147" onclick="handlePhoneClick(event, '(303) 555-0147')" class="font-display font-extrabold text-2xl sm:text-3xl text-white hover:text-amber-400 transition inline-flex items-center gap-2.5">
+                <svg class="w-7 h-7 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                <span class="brand-phone-display">(303) 555-0147</span>
+              </a>
+              <div class="mt-4 pt-4 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                <div>
+                  <span class="block text-slate-400 font-semibold">HOURS</span>
+                  <span>Mon–Sat: 8:00 AM – 6:00 PM</span>
+                </div>
+                <div>
+                  <span class="block text-slate-400 font-semibold">EMAIL</span>
+                  <a href="mailto:hello@summitroofing-demo.com" class="text-amber-300 hover:underline brand-email-display">hello@summitroofing-demo.com</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- What Happens Next (3 Simple Steps) -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+              <h3 class="font-display font-bold text-base text-navy-800">What Happens After You Submit:</h3>
+              <ol class="space-y-3 text-sm text-slate-600">
+                <li class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                  <span><strong>Quick Confirmation Call:</strong> We call you within 1 business day to confirm a convenient 30-minute window.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                  <span><strong>21-Point Photo Inspection:</strong> Our licensed inspector checks your shingles, flashing, gutters, and attic ventilation.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                  <span><strong>Written Itemized Estimate:</strong> You get a transparent, fixed-price written quote and photo report with zero sales pressure.</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- Right Column: The Estimate Form -->
+          <div class="lg:col-span-7">
+            <div class="bg-white rounded-2xl p-6 sm:p-8 border-2 border-slate-200 shadow-xl relative">
+              
+              <div class="flex flex-wrap items-center justify-between gap-2 pb-5 mb-6 border-b border-slate-100">
+                <div>
+                  <h3 class="font-display font-extrabold text-xl sm:text-2xl text-navy-800">Free Roofing Estimate Form</h3>
+                  <p class="text-xs text-slate-500 mt-0.5">Fields marked with <span class="text-red-600 font-bold">*</span> are required. Protected by anti-spam verification.</p>
+                </div>
+                <button type="button" onclick="fillDemoLeadData()" class="inline-flex items-center gap-1.5 text-xs font-bold text-navy-800 bg-amber-100 hover:bg-amber-200 border border-amber-300 px-3 py-1.5 rounded-lg transition" title="Populate realistic test data to test form submission in 1 click">
+                  <span>⚡ Auto-Fill Test Data</span>
+                </button>
+              </div>
+
+              <div id="formErrorBanner" class="hidden mb-5 p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-sm" role="alert">
+                <div class="flex items-start gap-2.5">
+                  <svg class="w-5 h-5 text-red-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                  <div>
+                    <p class="font-bold">Please check the highlighted fields below:</p>
+                    <p id="formErrorBannerText" class="text-xs mt-0.5 text-red-700"></p>
+                  </div>
+                </div>
+              </div>
+
+              <form id="estimateForm" onsubmit="handleEstimateSubmit(event)" novalidate class="space-y-4">
+                
+                <!-- SPAM PROTECTION 1: Honeypot Trap -->
+                <div class="hp-field-wrap" aria-hidden="true">
+                  <label for="hp_company_website">Leave this field blank</label>
+                  <input type="text" id="hp_company_website" name="_gotcha" tabindex="-1" autocomplete="off">
+                </div>
+
+                <!-- Row 1: Full Name + Phone -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="leadName" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                      Full Name <span class="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="leadName"
+                      name="name"
+                      required
+                      autocomplete="name"
+                      placeholder="e.g. Jordan Miller"
+                      oninput="clearFieldError('leadName')"
+                      class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
+                    >
+                    <p id="err-leadName" class="hidden text-xs text-red-600 font-medium mt-1">Please enter your full name (at least 2 characters).</p>
+                  </div>
+
+                  <div>
+                    <label for="leadPhone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                      Phone Number <span class="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="leadPhone"
+                      name="phone"
+                      required
+                      autocomplete="tel"
+                      placeholder="(303) 555-0199"
+                      oninput="formatPhoneInput(this); clearFieldError('leadPhone')"
+                      class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
+                    >
+                    <p id="err-leadPhone" class="hidden text-xs text-red-600 font-medium mt-1">Please enter a valid 10-digit US phone number.</p>
+                  </div>
+                </div>
+
+                <!-- Row 2: Email + Street Address -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="leadEmail" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                      Email Address <span class="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="leadEmail"
+                      name="email"
+                      required
+                      autocomplete="email"
+                      placeholder="jordan@example.com"
+                      oninput="clearFieldError('leadEmail')"
+                      class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
+                    >
+                    <p id="err-leadEmail" class="hidden text-xs text-red-600 font-medium mt-1">Please enter a valid email address.</p>
+                  </div>
+
+                  <div>
+                    <label for="leadAddress" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                      Property Address <span class="text-red-600">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="leadAddress"
+                      name="address"
+                      required
+                      autocomplete="street-address"
+                      placeholder="1420 S University Blvd, Denver, CO"
+                      oninput="clearFieldError('leadAddress')"
+                      class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
+                    >
+                    <p id="err-leadAddress" class="hidden text-xs text-red-600 font-medium mt-1">Please enter the street address and city.</p>
+                  </div>
+                </div>
+
+                <!-- Row 3: Roof Type Dropdown + Service Needed Dropdown -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="leadRoofType" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                      Roof Type <span class="text-red-600">*</span>
+                    </label>
+                    <select
+                      id="leadRoofType"
+                      name="roof_type"
+                      required
+                      onchange="clearFieldError('leadRoofType')"
+                      class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
+                    >
+                      <option value="">Select Roof Type...</option>
+                      <option value="Asphalt Shingle">Asphalt Shingle</option>
+                      <option value="Metal">Metal</option>
+                      <option value="Tile">Tile</option>
+                      <option value="Flat">Flat</option>
+                      <option value="Not Sure">Not Sure</option>
+                    </select>
+                    <p id="err-leadRoofType" class="hidden text-xs text-red-600 font-medium mt-1">Please select your roof type.</p>
+                  </div>
+
+                  <div>
+                    <label for="leadService" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                      Service Needed <span class="text-red-600">*</span>
+                    </label>
+                    <select
+                      id="leadService"
+                      name="service"
+                      required
+                      onchange="clearFieldError('leadService')"
+                      class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
+                    >
+                      <option value="">Select Service Needed...</option>
+                      <option value="Replacement">Replacement</option>
+                      <option value="Repair">Repair</option>
+                      <option value="Inspection">Inspection</option>
+                      <option value="Gutters">Gutters</option>
+                      <option value="Storm Damage">Storm Damage</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <p id="err-leadService" class="hidden text-xs text-red-600 font-medium mt-1">Please select the service needed.</p>
+                  </div>
+                </div>
+
+                <!-- Row 4: Message -->
+                <div>
+                  <label for="leadMessage" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                    Project Details or Questions <span class="text-slate-400 font-normal">(Optional)</span>
+                  </label>
+                  <textarea
+                    id="leadMessage"
+                    name="message"
+                    rows="3"
+                    placeholder="Tell us about any leaks, recent hail damage, age of your roof, or best time to call..."
+                    class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition"
+                  ></textarea>
+                </div>
+
+                <!-- SPAM PROTECTION 2 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3.5 flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="humanVerifyCheck"
+                    checked
+                    onchange="clearFieldError('humanVerifyCheck')"
+                    class="mt-0.5 w-4 h-4 rounded border-slate-300 text-amber-600 focus:ring-amber-500"
+                  >
+                  <label for="humanVerifyCheck" class="text-xs text-slate-600 leading-relaxed select-none cursor-pointer">
+                    <strong>Spam Protection Check:</strong> I am a homeowner or property manager requesting a roofing quote in the Denver metro area, and I agree to receive a call or email regarding my estimate.
+                  </label>
+                </div>
+                <p id="err-humanVerifyCheck" class="hidden text-xs text-red-600 font-medium">Please confirm the spam protection checkbox.</p>
+
+                <!-- Submit Button -->
+                <button
+                  type="submit"
+                  id="submitEstimateBtn"
+                  class="w-full brand-amber-bg text-slate-950 font-display font-extrabold text-base sm:text-lg py-4 px-6 rounded-xl shadow-lg transition flex items-center justify-center gap-2"
+                >
+                  <span id="submitBtnText">Submit &amp; Get My Free Estimate</span>
+                  <svg id="submitBtnIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+
+                <div class="flex flex-wrap items-center justify-between gap-2 pt-2 text-[11px] text-slate-500">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                    Saves to Private Lead Store (Supabase / Google Sheet + Local Table) &amp; Formspree Email
+                  </span>
+                  <button type="button" onclick="switchView('leads')" class="text-navy-800 hover:text-amber-600 font-bold underline">
+                    View Saved Leads Table →
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- What Happens Next Timeline -->
-      <div class="p-6 sm:p-8 space-y-6 text-left border-b border-slate-100">
-        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-400 text-center">
-          What Happens Next
-        </h2>
+  <!-- =====================================================================
+       PAGE 6: THANK YOU PAGE VIEW (thank-you.html)
+       ===================================================================== -->
+  <section id="view-thank-you" class="hidden py-14 sm:py-24 bg-slate-50 min-h-[75vh]">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <div class="bg-white rounded-3xl p-6 sm:p-10 border-2 border-emerald-500/30 shadow-xl text-center space-y-6">
+        
+        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto shadow-inner">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-            <span class="w-6 h-6 rounded-full bg-amber-500 text-brand-navy font-bold text-xs flex items-center justify-center mb-2">1</span>
-            <h3 class="font-bold text-slate-900 text-sm mb-1">Phone Review</h3>
-            <p class="text-slate-500 text-xs leading-relaxed">
-              We confirm your roof details, hail timeline, and select a time that fits your schedule.
-            </p>
+        <div class="space-y-2">
+          <span class="inline-block text-xs font-extrabold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
+            Estimate Request Received
+          </span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-4xl text-navy-800">
+            Thanks! We'll call you within 1 business day.
+          </h1>
+          <p class="text-slate-600 text-sm sm:text-base max-w-lg mx-auto">
+            Your request has been logged in our lead tracker with status <span class="font-bold text-emerald-700">"New"</span> and dispatched for email notification.
+          </p>
+        </div>
+
+        <div id="thankYouLeadSummary" class="bg-slate-50 rounded-2xl p-5 border border-slate-200 text-left text-sm space-y-2.5">
+          <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+            <span class="font-bold text-navy-800">Submitted Lead Summary</span>
+            <span id="tyDeliveryStatus" class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Saved to Leads Table ✓</span>
           </div>
-
-          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-            <span class="w-6 h-6 rounded-full bg-amber-500 text-brand-navy font-bold text-xs flex items-center justify-center mb-2">2</span>
-            <h3 class="font-bold text-slate-900 text-sm mb-1">21-Point Inspection</h3>
-            <p class="text-slate-500 text-xs leading-relaxed">
-              Our certified roofer takes high-res drone/ladder photos of decking, flashing, and shingles.
-            </p>
-          </div>
-
-          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-            <span class="w-6 h-6 rounded-full bg-amber-500 text-brand-navy font-bold text-xs flex items-center justify-center mb-2">3</span>
-            <h3 class="font-bold text-slate-900 text-sm mb-1">Written Quote</h3>
-            <p class="text-slate-500 text-xs leading-relaxed">
-              You receive an itemized, transparent quote with zero hidden fees and no sales pressure.
-            </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm">
+            <div><span class="text-slate-500">Name:</span> <strong id="tyName" class="text-slate-900">Jordan Miller</strong></div>
+            <div><span class="text-slate-500">Phone:</span> <strong id="tyPhone" class="text-slate-900">(303) 555-0199</strong></div>
+            <div><span class="text-slate-500">Email:</span> <strong id="tyEmail" class="text-slate-900">jordan@example.com</strong></div>
+            <div><span class="text-slate-500">Address:</span> <strong id="tyAddress" class="text-slate-900">1420 S University Blvd, Denver, CO</strong></div>
+            <div><span class="text-slate-500">Roof Type:</span> <strong id="tyRoofType" class="text-slate-900">Asphalt Shingle</strong></div>
+            <div><span class="text-slate-500">Service:</span> <strong id="tyService" class="text-slate-900">Replacement</strong></div>
           </div>
         </div>
 
-        <!-- Immediate Assistance Box -->
-        <div class="p-4 rounded-xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <p class="font-bold text-sm text-white flex items-center">
-              <i data-lucide="zap" class="w-4 h-4 mr-1 text-amber-400"></i>
-              Active roof leak or storm emergency?
-            </p>
-            <p class="text-xs text-slate-400">Don't wait for our callback — call our emergency line directly.</p>
+        <div class="bg-navy-50 border border-navy-100 rounded-xl p-4 text-xs sm:text-sm text-navy-800">
+          Have an active roof leak or urgent storm damage? Call us right now at
+          <a href="tel:+13035550147" onclick="handlePhoneClick(event, '(303) 555-0147')" class="font-extrabold underline text-navy-900 brand-phone-display">(303) 555-0147</a>.
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+          <button type="button" onclick="switchView('home')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 brand-navy-bg hover:bg-navy-700 text-white font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow transition">
+            <span>← Back to Home</span>
+          </button>
+          <button type="button" onclick="switchView('leads')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 brand-amber-bg text-slate-950 font-extrabold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow transition">
+            <span>Verify Lead in Leads Page (/leads.html) →</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PAGE 7: LEADS PAGE VIEW (/leads.html — Private Lead Storage & CRM Table)
+       ===================================================================== -->
+  <section id="view-leads" class="hidden py-10 sm:py-14 bg-slate-50 min-h-[80vh]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-xs font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded bg-navy-800 text-amber-400">/leads.html</span>
+            <span id="storageConnectionBadge" class="text-xs font-semibold px-2.5 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-200">
+              Active Store: Browser + Supabase/Google Sheet Ready
+            </span>
           </div>
-          <a href="tel:3035550147" class="inline-flex items-center px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-brand-navy font-bold text-xs shrink-0 font-mono shadow">
-            Call (303) 555-0147
-          </a>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-navy-800 mt-1.5">
+            Summit Roofing — Captured Leads
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">
+            Displays all captured form submissions (<code class="bg-slate-100 px-1.5 py-0.5 rounded text-navy-800 font-semibold text-xs">name</code>, <code class="bg-slate-100 px-1.5 py-0.5 rounded text-navy-800 font-semibold text-xs">phone</code>, <code class="bg-slate-100 px-1.5 py-0.5 rounded text-navy-800 font-semibold text-xs">email</code>, <code class="bg-slate-100 px-1.5 py-0.5 rounded text-navy-800 font-semibold text-xs">address</code>, <code class="bg-slate-100 px-1.5 py-0.5 rounded text-navy-800 font-semibold text-xs">roof_type</code>, <code class="bg-slate-100 px-1.5 py-0.5 rounded text-navy-800 font-semibold text-xs">service</code>, <code class="bg-slate-100 px-1.5 py-0.5 rounded text-navy-800 font-semibold text-xs">message</code>, <code class="bg-slate-100 px-1.5 py-0.5 rounded text-navy-800 font-semibold text-xs">created_at</code>, <code class="bg-slate-100 px-1.5 py-0.5 rounded text-navy-800 font-semibold text-xs">status</code>). Export directly to your restricted Google Sheet or connect live Supabase / Formspree webhooks.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button type="button" onclick="addSampleLeadDirectly()" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs sm:text-sm transition border border-slate-300">
+            + Simulate New Lead
+          </button>
+          <button type="button" onclick="exportLeadsToCSV()" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm transition shadow-sm flex items-center gap-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>Export to Google Sheets (.CSV)</span>
+          </button>
+          <button type="button" onclick="openModal('integrationsModal')" class="px-3.5 py-2 rounded-xl brand-navy-bg text-white font-bold text-xs sm:text-sm transition shadow-sm">
+            🔌 Connect Supabase / Sheet
+          </button>
+          <button type="button" onclick="switchView('home')" class="px-3.5 py-2 rounded-xl brand-amber-bg text-slate-950 font-extrabold text-xs sm:text-sm transition shadow-sm">
+            ← Back to Home
+          </button>
         </div>
       </div>
 
-      <!-- Footer Buttons inside Card -->
-      <div class="p-6 bg-slate-50 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="index.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-brand-navy hover:bg-slate-800 text-white font-bold text-sm transition-all shadow">
-          <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
-          Return to Home Page
-        </a>
-        <a href="leads.html" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-semibold text-sm border border-slate-300 transition-all">
-          <i data-lucide="table-2" class="w-4 h-4 mr-2 text-amber-500"></i>
-          View Leads Table (Prototype)
-        </a>
+      <!-- KPI Summary Strip -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+          <p class="text-xs font-bold uppercase text-slate-500">Total Leads</p>
+          <p id="kpiTotalLeads" class="font-display font-extrabold text-2xl sm:text-3xl text-navy-800 mt-1">4</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+          <p class="text-xs font-bold uppercase text-amber-700">New (Uncontacted)</p>
+          <p id="kpiNewLeads" class="font-display font-extrabold text-2xl sm:text-3xl text-amber-600 mt-1">2</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+          <p class="text-xs font-bold uppercase text-blue-700">Inspection Scheduled</p>
+          <p id="kpiScheduledLeads" class="font-display font-extrabold text-2xl sm:text-3xl text-blue-600 mt-1">1</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+          <p class="text-xs font-bold uppercase text-emerald-700">Contacted / Quoted</p>
+          <p id="kpiContactedLeads" class="font-display font-extrabold text-2xl sm:text-3xl text-emerald-600 mt-1">1</p>
+        </div>
+      </div>
+
+      <!-- Filter & Search Bar -->
+      <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+        <div class="flex items-center gap-1.5 flex-wrap">
+          <button type="button" onclick="setLeadFilter('All')" id="leadFilter-All" class="lead-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold brand-navy-bg text-white">All Statuses</button>
+          <button type="button" onclick="setLeadFilter('New')" id="leadFilter-New" class="lead-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">New</button>
+          <button type="button" onclick="setLeadFilter('Contacted')" id="leadFilter-Contacted" class="lead-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Contacted</button>
+          <button type="button" onclick="setLeadFilter('Scheduled')" id="leadFilter-Scheduled" class="lead-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200">Scheduled</button>
+        </div>
+
+        <div class="relative flex-1 max-w-xs">
+          <input
+            type="search"
+            id="leadSearchInput"
+            oninput="renderLeadsTable()"
+            placeholder="Search name, phone, city, service..."
+            class="w-full pl-9 pr-3 py-1.5 rounded-lg border border-slate-300 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+          >
+          <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+      </div>
+
+      <!-- Leads Table Container -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="brand-navy-bg text-white text-xs uppercase tracking-wider">
+                <th class="py-3.5 px-4 font-bold">Name &amp; Property Address</th>
+                <th class="py-3.5 px-4 font-bold">Phone &amp; Email</th>
+                <th class="py-3.5 px-4 font-bold">Service &amp; Roof Type</th>
+                <th class="py-3.5 px-4 font-bold">Date (created_at)</th>
+                <th class="py-3.5 px-4 font-bold">Status</th>
+              </tr>
+            </thead>
+            <tbody id="leadsTableBody" class="divide-y divide-slate-200 text-sm">
+              <!-- Populated dynamically via JS -->
+            </tbody>
+          </table>
+        </div>
       </div>
 
     </div>
-  </main>
+  </section>
 
-  <!-- Footer -->
-  <footer class="bg-brand-navy-dark text-slate-400 text-xs py-6 text-center border-t border-slate-800">
-    <p>© 2026 Summit Roofing. Denver, Colorado. All rights reserved.</p>
+  <!-- =====================================================================
+       9. MULTI-PAGE FOOTER
+       ===================================================================== -->
+  <footer class="brand-navy-dark-bg text-slate-300 pt-12 pb-16 md:pb-12 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-white/10">
+        
+        <div class="space-y-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-lg bg-amber-500 flex items-center justify-center text-slate-950 font-extrabold">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/></svg>
+            </div>
+            <span class="font-display font-extrabold text-lg text-white brand-name-display">Summit Roofing</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Roof Replacement &amp; Repair in Denver. Licensed &amp; Insured, 15 Years Experience, Free Inspection.
+          </p>
+          <p class="text-[11px] text-amber-300/90 bg-white/5 border border-white/10 px-2.5 py-1.5 rounded-lg">
+            Multi-Page Prototype Demo — Built for reusable client customization.
+          </p>
+        </div>
+
+        <div class="space-y-2.5 text-sm">
+          <h3 class="font-display font-bold text-white text-base">Contact Us</h3>
+          <p class="flex items-center gap-2">
+            <span class="text-amber-400 font-bold">Phone:</span>
+            <a href="tel:+13035550147" onclick="handlePhoneClick(event, '(303) 555-0147')" class="text-white hover:text-amber-400 font-semibold brand-phone-display">(303) 555-0147</a>
+          </p>
+          <p class="flex items-center gap-2">
+            <span class="text-amber-400 font-bold">Email:</span>
+            <a href="mailto:hello@summitroofing-demo.com" class="text-white hover:text-amber-400 underline brand-email-display">hello@summitroofing-demo.com</a>
+          </p>
+          <p class="flex items-center gap-2">
+            <span class="text-amber-400 font-bold">Hours:</span>
+            <span>Mon–Sat 8am–6pm (Closed Sun)</span>
+          </p>
+        </div>
+
+        <div class="space-y-2.5 text-sm">
+          <h3 class="font-display font-bold text-white text-base">Service Area</h3>
+          <ul class="space-y-1.5 text-slate-300 text-xs sm:text-sm">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Denver, CO (All Neighborhoods)</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Aurora, CO</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Lakewood, CO</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> Littleton, CO</li>
+          </ul>
+        </div>
+
+        <div class="space-y-2.5 text-sm">
+          <h3 class="font-display font-bold text-white text-base">Website Pages</h3>
+          <div class="grid grid-cols-2 gap-1.5 text-xs sm:text-sm">
+            <button type="button" onclick="switchView('home')" class="text-left hover:text-amber-400 transition">Our Services</button>
+            <button type="button" onclick="switchView('services')" class="text-left hover:text-amber-400 transition">Services Page</button>
+            <button type="button" onclick="switchView('gallery')" class="text-left hover:text-amber-400 transition">Photo Gallery</button>
+            <button type="button" onclick="switchView('reviews')" class="text-left hover:text-amber-400 transition">Customer Reviews</button>
+            <button type="button" onclick="navigateToSection('estimate', true)" class="text-left hover:text-amber-400 transition">Free Estimate</button>
+            <button type="button" onclick="switchView('leads')" class="text-left text-amber-300 hover:text-amber-200 font-semibold">Leads Page (/leads.html)</button>
+            <button type="button" onclick="openModal('customizerModal')" class="text-left text-slate-400 hover:text-white">Template Config</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+        <p>&copy; 2026 <span class="brand-name-display">Summit Roofing</span> (Denver, CO). All rights reserved. Fictional company prototype.</p>
+        <p>Zero-Cost Multi-Page Stack: HTML + Tailwind CSS + Vanilla JS • Vercel Ready</p>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    lucide.createIcons();
+  <!-- =====================================================================
+       MOBILE STICKY BOTTOM ACTION BAR
+       ===================================================================== -->
+  <div class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-navy-950/95 backdrop-blur-md border-t border-white/15 px-3 py-2.5 shadow-2xl">
+    <div class="grid grid-cols-2 gap-2.5 max-w-md mx-auto">
+      <a href="tel:+13035550147" onclick="handlePhoneClick(event, '(303) 555-0147')" class="flex items-center justify-center gap-2 bg-white text-navy-900 font-extrabold text-xs py-3 px-3 rounded-xl shadow">
+        <svg class="w-4 h-4 text-amber-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+        <span class="brand-phone-display">(303) 555-0147</span>
+      </a>
+      <button type="button" onclick="navigateToSection('estimate', true)" class="flex items-center justify-center gap-1.5 brand-amber-bg text-slate-950 font-extrabold text-xs py-3 px-3 rounded-xl shadow">
+        <span>Get Free Estimate</span>
+        <span>→</span>
+      </button>
+    </div>
+  </div>
 
-    // Try reading latest lead from sessionStorage for personalized confirmation
-    try {
-      const stored = sessionStorage.getItem("summit_latest_lead");
-      if (stored) {
-        const lead = JSON.parse(stored);
-        const card = document.getElementById("lead-summary-card");
-        if (card && lead.name) {
-          document.getElementById("lead-name").textContent = lead.name;
-          document.getElementById("lead-phone").textContent = lead.phone;
-          document.getElementById("lead-address").textContent = lead.address;
-          card.classList.remove("hidden");
-        }
-      }
-    } catch (e) {}
-  </script>
+  <!-- =====================================================================
+       LIGHTBOX MODAL
+       ===================================================================== -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+    <div class="relative max-w-4xl w-full bg-navy-900 border border-white/15 rounded-2xl overflow-hidden shadow-2xl">
+      <div class="flex items-center justify-between px-4 sm:px-6 py-3.5 border-b border-white/10 text-white">
+        <div class="flex items-center gap-2.5">
+          <span id="lightboxCounter" class="text-xs font-bold bg-amber-500 text-slate-950 px-2 py-0.5 rounded">1 / 8</span>
+          <h3 id="lightboxTitle" class="font-display font-bold text-sm sm:text-lg">Roof Replacement — Aurora</h3>
+        </div>
+        <button type="button" onclick="closeLightbox()" class="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition" aria-label="Close Lightbox">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="relative bg-slate-950 flex items-center justify-center">
+        <img id="lightboxImg" src="" alt="" class="max-h-[65vh] w-auto object-contain mx-auto">
+        <button type="button" onclick="stepLightbox(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-amber-500 hover:text-slate-950 text-white border border-white/20 flex items-center justify-center transition shadow-lg" aria-label="Previous image">
+          ‹
+        </button>
+        <button type="button" onclick="stepLightbox(1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-amber-500 hover:text-slate-950 text-white border border-white/20 flex items-center justify-center transition shadow-lg" aria-label="Next image">
+          ›
+        </button>
+      </div>
+
+      <div class="p-4 sm:p-5 bg-navy-900 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <p id="lightboxSpec" class="text-xs sm:text-sm text-slate-300"></p>
+          <span class="inline-block text-[11px] text-amber-300 mt-1">Demo Photo Placeholder • Replaceable in CLIENT_CONFIG</span>
+        </div>
+        <button type="button" onclick="requestSimilarFromLightbox()" class="brand-amber-bg text-slate-950 font-extrabold text-xs sm:text-sm px-4 py-2.5 rounded-xl whitespace-nowrap shadow">
+          Get Estimate for This Service →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL: REUSABLE CLIENT TEMPLATE CUSTOMIZER
+       ===================================================================== -->
+  <div id="customizerModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <div>
+          <h3 class="font-display font-extrabold text-lg text-navy-800">⚡ Reusable Client Template Customizer</h3>
+          <p class="text-xs text-slate-500">Test rebranding this multi-page website for any future roofing client.</p>
+        </div>
+        <button type="button" onclick="closeModal('customizerModal')" class="text-slate-400 hover:text-slate-700 p-1">✕</button>
+      </div>
+
+      <div class="space-y-3 text-sm">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Company Name</label>
+          <input type="text" id="custCompanyName" value="Summit Roofing" class="w-full px-3 py-2 rounded-lg border border-slate-300">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Primary City</label>
+            <input type="text" id="custCity" value="Denver" class="w-full px-3 py-2 rounded-lg border border-slate-300">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Phone Number</label>
+            <input type="text" id="custPhone" value="(303) 555-0147" class="w-full px-3 py-2 rounded-lg border border-slate-300">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Service Areas</label>
+          <input type="text" id="custAreas" value="Denver, Aurora, Lakewood, Littleton" class="w-full px-3 py-2 rounded-lg border border-slate-300">
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+        <button type="button" onclick="resetClientTemplate()" class="text-xs font-bold text-slate-500 hover:text-slate-800">Reset to Summit Roofing Default</button>
+        <div class="flex gap-2">
+          <button type="button" onclick="closeModal('customizerModal')" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">Cancel</button>
+          <button type="button" onclick="applyClientCustomization()" class="px-4 py-2 rounded-lg brand-amber-bg text-slate-950 text-xs font-extrabold">Apply Rebrand Live</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL: PRIVATE LEAD STORAGE CONFIG
+       ===================================================================== -->
+  <div id="integrationsModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200 space-y-4 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <div>
+          <h3 class="font-display font-extrabold text-lg text-navy-800">🔌 Lead Storage &amp; Email Notification Config</h3>
+          <p class="text-xs text-slate-500">Supports Restricted Google Sheet Webhook, Supabase `leads` table, and Formspree ($0 tier).</p>
+        </div>
+        <button type="button" onclick="closeModal('integrationsModal')" class="text-slate-400 hover:text-slate-700 p-1">✕</button>
+      </div>
+
+      <div class="space-y-3 text-xs sm:text-sm">
+        <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900">
+          <strong>Zero-Config Prototype Mode Active:</strong> Every form submission is automatically validated, saved to persistent browser storage, and immediately visible in <code>/leads.html</code>. Add optional live endpoints below to also push to your external Google Sheet, Supabase table, or Formspree inbox.
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-700 mb-1">1. Restricted Google Sheet Web App URL (Optional — Private Lead Sheet)</label>
+          <input type="url" id="cfgGoogleSheetUrl" placeholder="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+          <p class="text-[11px] text-slate-500 mt-1">Pushes every lead directly to a private Google Sheet owned by your Google account—no public CRM required.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">2. Supabase Project URL (Optional)</label>
+            <input type="url" id="cfgSupabaseUrl" placeholder="https://xyzcompany.supabase.co" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Supabase Anon Key (Optional)</label>
+            <input type="text" id="cfgSupabaseKey" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6..." class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-700 mb-1">3. Formspree Endpoint URL (Optional — Email Notifications)</label>
+          <input type="url" id="cfgFormspreeUrl" placeholder="https://formspree.io/f/xwkgyrqp" class="w-full px-3 py-2 rounded-lg border border-slate-300 text-xs">
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-2 pt-3 border-t border-slate-100">
+        <button type="button" onclick="closeModal('integrationsModal')" class="px-4 py-2 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">Close</button>
+        <button type="button" onclick="saveIntegrationSettings()" class="px-4 py-2 rounded-lg brand-navy-bg text-white text-xs font-extrabold">Save Endpoints</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       IN-PAGE TOAST NOTIFICATION
+       ===================================================================== -->
+  <div id="toastBanner" class="fixed bottom-16 md:bottom-6 right-4 z-50 hidden max-w-sm bg-navy-900 text-white border border-amber-400/40 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+    <span class="w-2.5 h-2.5 rounded-full bg-amber-400 shrink-0"></span>
+    <p id="toastBannerText" class="text-xs sm:text-sm font-medium"></p>
+  </div>
+
+  <!-- =====================================================================
+       APPLICATION JAVASCRIPT (Multi-Page Routing, Config, Gallery, Validation, Lead Store)
+       ===================================================================== -->
+  <script>window.INITIAL_PAGE_VIEW = "thank-you";</script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
